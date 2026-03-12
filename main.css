@@ -2053,27 +2053,4 @@ div.paginate-container li:nth-last-child(2) a:after {
     margin-right: 4px;
   }
 
-/* 这种写法会把网页里所有可能的背景容器都一网打尽 */
-body header, 
-body .header, 
-body .site-header, 
-body .header-container, 
-body .hero, 
-body #header, 
-body .intro-header {
-    background-color: #1a1a1a !important;
-    background-image: 
-        linear-gradient(30deg, #222 12%, transparent 12.5%, transparent 87%, #222 87.5%, #222),
-        linear-gradient(150deg, #222 12%, transparent 12.5%, transparent 87%, #222 87.5%, #222),
-        linear-gradient(30deg, #222 12%, transparent 12.5%, transparent 87%, #222 87.5%, #222),
-        linear-gradient(150deg, #222 12%, transparent 12.5%, transparent 87%, #222 87.5%, #222),
-        linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333),
-        linear-gradient(60deg, #333 25%, transparent 25.5%, transparent 75%, #333 75%, #333) !important;
-    background-size: 20px 35px !important;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px !important;
-}
 
-/* 强制让文字变白，防止看不见名字 */
-h1, p, .site-header h1, .site-header p {
-    color: #ffffff !important;
-}
