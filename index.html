@@ -1,1874 +1,358 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFR2GFKT75"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RFR2GFKT75');
-  </script> -->
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  })(window,document,'script','dataLayer','GTM-NC38VTD');</script> -->
-  <!-- End Google Tag Manager -->
-
+<!doctype html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta http-equiv="refresh" content="0; URL=https://cs.stanford.edu/~leoyuan/"> -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	<!-- <meta name="google-site-verification" content="u_--0s_Uw50r4zCgRrzltkmFhNCduYOJwPGlKVTuNJU" /> -->
-
-  <title>Dedai Wei</title>
-  <meta name="description" lang="en" content="This is an academic website for Will Hua">
-  <meta name="keywords" lang="en" content="Dedai Wei" />
-  
-
-  <link rel="shortcut icon" href="images/J.jpeg">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/academicons.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-
-  <script src="js/jquery-2.1.3.min.js"> </script>
-
-  <!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-</script>
-<![endif]-->
-
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-        if(document.getElementById(divId).style.display == 'none') {
-            document.getElementById(divId).style.display='block';
-            document.getElementById(linkDivId).style.display='none'; // Hide the "read more" link
-        }
-        else {
-            document.getElementById(divId).style.display = 'none';
-        }
-    }
-  </script>
-
+  <meta name="description" content="Academic homepage of Dedai Wei, a second-year master's student at the University of Macau and an AI for Science researcher.">
+  <meta name="keywords" content="Dedai Wei, AI for Science, mathematical modeling, stochastic optimization, neural networks, diffusion models, LLM agents">
+  <title>Dedai Wei | Academic Homepage</title>
   <style>
-    /* 为所有列表项设置样式 */
-    li.indented {
-        position: relative;
-        padding-left: 90px; /* 这是对齐效果的关键，可以根据实际内容调整这个值 */
+    :root { --ink:#17202a; --muted:#5e6975; --line:#dce3e8; --paper:#fff; --wash:#f5f8fa; --blue:#215b78; --blue2:#153f55; --accent:#b56a3b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--wash); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+    a { color:var(--blue); text-decoration:none; }
+    a:hover { color:var(--accent); }
+    .nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+    .nav-inner { max-width:1080px; margin:auto; padding:13px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-family:Georgia,serif; font-weight:700; color:var(--ink); letter-spacing:.02em; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:18px; font-size:.92rem; }
+    .hero { color:white; background:linear-gradient(100deg,rgba(8,35,50,.94) 0%,rgba(15,57,75,.82) 53%,rgba(15,57,75,.48) 100%),url("work/um-campus.jpg") center 48%/cover no-repeat; }
+    .hero-inner { max-width:1080px; margin:auto; padding:68px 28px 62px; display:grid; grid-template-columns:180px 1fr; gap:42px; align-items:center; }
+    .avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center; border:5px solid rgba(255,255,255,.9); box-shadow:0 12px 35px rgba(0,0,0,.23); background:#d9e3e8; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.25; }
+    h1 { margin:0 0 8px; font-size:3rem; }
+    .role { margin:0 0 18px; font-size:1.18rem; color:#e4eef2; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .button { display:inline-block; padding:9px 15px; border:1px solid rgba(255,255,255,.72); border-radius:6px; color:white; font-weight:600; font-size:.92rem; }
+    .button.primary { color:var(--blue2); background:white; }
+    .button:hover { color:white; border-color:white; background:rgba(255,255,255,.12); }
+    .button.primary:hover { color:var(--blue2); background:#edf4f6; }
+    .contact-line { margin:0 0 18px; color:#e8f1f4; font-size:1rem; }
+    .socials { display:flex; flex-wrap:wrap; gap:16px; }
+    .profile-link { --profile-color:#3d7fa8; width:66px; display:flex; flex-direction:column; align-items:center; gap:6px; color:#fff; font-size:.78rem; font-weight:700; letter-spacing:.02em; }
+    .profile-link:hover { color:#fff; }
+    .profile-icon { width:56px; height:56px; display:grid; place-items:center; color:#fff; border:2px solid rgba(255,255,255,.78); border-radius:50%; background:var(--profile-color); box-shadow:0 6px 16px rgba(0,0,0,.18); transition:transform .2s,box-shadow .2s; }
+    .profile-link:hover .profile-icon { transform:translateY(-3px) scale(1.04); box-shadow:0 9px 20px rgba(0,0,0,.23); }
+    .profile-icon svg { width:27px; height:27px; fill:currentColor; }
+    .profile-link.email { --profile-color:#d95d54; }
+    .profile-link.scholar { --profile-color:#3477b9; }
+    .profile-link.cv { --profile-color:#168574; }
+    .profile-link.entj { --profile-color:#8754a8; }
+    .profile-icon.text-icon { font-size:.73rem; font-weight:900; letter-spacing:.05em; }
+    .profile-label { line-height:1.15; text-align:center; text-shadow:0 1px 2px rgba(0,0,0,.25); }
+    main { max-width:1080px; margin:0 auto; padding:34px 28px 70px; }
+    section { scroll-margin-top:70px; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:30px 34px; margin:22px 0; box-shadow:0 5px 18px rgba(30,50,65,.045); }
+    h2 { margin:0 0 20px; padding-bottom:10px; border-bottom:2px solid var(--blue); font-size:1.65rem; }
+    h3 { margin:4px 0 8px; font-size:1.12rem; }
+    p { margin:8px 0 13px; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+    .interest-block { max-width:920px; }
+    .personal-note { color:#485661; }
+    .tag.personal { background:#f5ece7; color:#824c2f; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { padding:5px 10px; border-radius:99px; background:#eaf1f4; color:var(--blue2); font-size:.88rem; }
+    .entry { position:relative; padding:0 0 23px 24px; border-left:2px solid #cbd8de; }
+    .entry:last-child { padding-bottom:0; }
+    .entry:before { content:""; position:absolute; width:10px; height:10px; left:-6px; top:7px; border-radius:50%; background:var(--blue); }
+    .meta { color:var(--muted); font-size:.92rem; }
+    .trajectory-intro { max-width:930px; margin:-2px 0 24px; color:#43515d; font-size:1rem; line-height:1.72; }
+    .trajectory-panel { --rp-math:#6f46b8; --rp-model:#087b72; --rp-engineering:#c7661b; --rp-learning:#2267a8; --rp-ai:#bd3f62; overflow:hidden; padding:4px 0 0; }
+    .trajectory-chart { width:100%; height:auto; display:block; }
+    .trajectory-chart .rp-frame { fill:none; stroke:#d4dde2; stroke-width:1.2; }
+    .trajectory-chart .rp-grid { stroke:#e1e7eb; stroke-width:1; }
+    .trajectory-chart .rp-axis { stroke:#526672; stroke-width:1.8; }
+    .trajectory-chart .rp-tick { stroke:#526672; stroke-width:1.4; }
+    .trajectory-chart .rp-axis-arrow { fill:#526672; }
+    .trajectory-chart .rp-growth { fill:none; stroke:#82929b; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+    .trajectory-chart .rp-stream { stroke-width:3; stroke-linecap:round; opacity:.22; }
+    .trajectory-chart .rp-ray { fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
+    .trajectory-chart .rp-symbol { stroke:#fff; stroke-width:4; paint-order:stroke fill; filter:drop-shadow(0 2px 3px rgba(25,45,55,.14)); }
+    .trajectory-chart .rp-stage { font-family:"Avenir Next Rounded","Trebuchet MS","Arial Rounded MT Bold",sans-serif; font-size:19px; font-weight:700; letter-spacing:.1px; }
+    .trajectory-chart .rp-detail { fill:#34434e; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:16px; font-weight:600; }
+    .trajectory-chart .rp-axis-label { fill:#52616c; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:15px; font-weight:600; }
+    .trajectory-chart .rp-time { fill:#324651; font-family:"Avenir Next Rounded","Trebuchet MS",sans-serif; font-size:16px; font-weight:700; }
+    .trajectory-chart .rp-stage-group { transition:opacity .2s ease; }
+    .trajectory-chart:has(.rp-stage-group:hover) .rp-stage-group:not(:hover) { opacity:.52; }
+    .trajectory-mobile { display:none; }
+    .trajectory-mobile ol { list-style:none; position:relative; margin:5px 0 0; padding:0 0 0 42px; }
+    .trajectory-mobile ol:before { content:""; position:absolute; left:15px; top:17px; bottom:28px; width:2px; background:#ccd9df; }
+    .trajectory-mobile li { position:relative; padding:0 0 24px 10px; }
+    .trajectory-mobile li:last-child { padding-bottom:5px; }
+    .trajectory-mobile .rp-mobile-symbol { position:absolute; left:-42px; top:1px; width:30px; height:30px; filter:drop-shadow(0 2px 3px rgba(25,45,55,.16)); }
+    .trajectory-mobile strong { display:block; margin-bottom:3px; color:var(--rp-color); font:700 1.02rem/1.35 "Avenir Next Rounded","Trebuchet MS","Arial Rounded MT Bold",sans-serif; }
+    .trajectory-mobile span { display:block; color:#3e4d58; font-size:.92rem; line-height:1.55; }
+    .venue { font-style:italic; color:var(--muted); }
+    .status { display:inline-block; margin-left:5px; padding:1px 7px; border-radius:4px; background:#eef3f5; color:var(--blue2); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+    .paper-group { margin-top:28px; }
+    .paper-group-title { display:flex; align-items:center; gap:12px; margin:0 0 15px; color:var(--blue2); }
+    .paper-group-title:after { content:""; height:1px; flex:1; background:var(--line); }
+    .paper-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    .current-grid { grid-template-columns:1fr; }
+    .current-grid .paper { grid-template-columns:250px 1fr; min-height:190px; }
+    .current-grid .paper img { min-height:190px; }
+    .paper { display:grid; grid-template-columns:150px 1fr; min-height:170px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
+    .paper:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
+    .paper img { width:100%; height:100%; min-height:170px; object-fit:cover; background:var(--blue2); }
+    .paper img.figure-thumb { object-fit:contain; padding:8px; background:#fff; }
+    .paper-body { padding:15px 16px; }
+    .paper-title { margin:0 0 7px; font:700 1rem/1.36 Georgia,"Times New Roman",serif; }
+    .paper-meta { margin:0 0 8px; color:var(--muted); font-size:.82rem; line-height:1.45; }
+    .metric { display:inline-block; margin:3px 2px 0 4px; padding:1px 6px; border-radius:4px; color:#18536a; background:#e4f0f3; font-style:normal; font-weight:800; white-space:nowrap; }
+    .paper-desc { margin:0 0 10px; font-size:.86rem; line-height:1.5; }
+    .figure-source { margin:-3px 0 0; color:#7a878e; font-size:.72rem; font-style:italic; }
+    .paper-links { display:flex; flex-wrap:wrap; gap:7px; }
+    .paper-links a { padding:3px 8px; border:1px solid #b9ccd4; border-radius:4px; font-size:.78rem; font-weight:700; }
+    .compact { margin:5px 0; padding-left:21px; }
+    .compact li { margin:5px 0; }
+    .service-grid { display:grid; gap:16px; }
+    .service-card { display:grid; grid-template-columns:170px 1fr; min-height:190px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
+    .service-card:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
+    .service-cover { min-height:190px; position:relative; display:grid; place-items:center; overflow:hidden; background:#eef3f5; }
+    .service-cover > img { width:100%; height:100%; object-fit:contain; padding:8px; }
+    .service-cover.scientific-reports > .service-hero { padding:0; object-fit:cover; }
+    .service-cover .journal-logo-band { position:absolute; left:10px; right:10px; bottom:12px; padding:10px 12px; border-radius:5px; background:rgba(255,255,255,.93); box-shadow:0 3px 12px rgba(10,40,55,.18); }
+    .service-cover .journal-logo-band img { width:100%; height:auto; display:block; }
+    .service-body { padding:20px 22px; }
+    .service-title { margin:0 0 8px; font-size:1.18rem; }
+    .service-count { margin:0 0 8px; color:var(--blue2); font-weight:700; }
+    .service-note { margin:9px 0 12px; color:var(--muted); font-size:.88rem; }
+    .service-link { display:inline-block; padding:4px 9px; border:1px solid #b9ccd4; border-radius:4px; font-size:.8rem; font-weight:700; }
+    footer { text-align:center; color:var(--muted); padding:0 25px 36px; font-size:.88rem; }
+    footer .credit { display:block; margin-top:5px; font-size:.76rem; }
+    @media (max-width:720px) {
+      .nav-inner { align-items:flex-start; }
+      .nav-links { gap:9px 14px; justify-content:flex-end; }
+      .hero-inner { grid-template-columns:1fr; text-align:center; padding-top:48px; }
+      .avatar { margin:auto; width:150px; height:150px; }
+      .actions,.tags,.socials { justify-content:center; }
+      h1 { font-size:2.35rem; }
+      .two-col,.paper-grid { grid-template-columns:1fr; gap:20px; }
+      .paper { grid-template-columns:120px 1fr; }
+      .current-grid .paper { grid-template-columns:160px 1fr; }
+      .service-card { grid-template-columns:135px 1fr; }
+      section { padding:25px 22px; }
+      .trajectory-panel { padding:8px 0 0; }
+      .trajectory-chart { display:none; }
+      .trajectory-mobile { display:block; }
     }
-
-    li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
+    @media (max-width:480px) {
+      .paper { grid-template-columns:1fr; }
+      .current-grid .paper { grid-template-columns:1fr; }
+      .paper img { height:150px; min-height:0; }
+      .service-card { grid-template-columns:1fr; }
+      .service-cover { height:230px; min-height:0; }
     }
   </style>
-  
-
-  
 </head>
-
-
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC38VTD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-
-    <header class="site-header">
-
-  <div class="wrapper">
-<nav class="site-nav">
-  <a href="#" class="menu-icon">
-    <svg viewBox="0 0 18 15">
-      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-    </svg>
-  </a>
-
-  <div class="trigger">
-    <a class="page-link" href="#bio"><b>Biography</b></a>
-    <a class="page-link" href="#timeline"><b>Experiences</b></a>
-    <a class="page-link" href="#publications"><b>Publications</b></a>
-    <a class="page-link" href="#codebase"><b>GitHub</b></a>
-    <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
-    <a class="page-link" href="#academicservices"><b>Academic Services </b></a>
-    <!--<a class="page-link" href="#otherprojects">Projects</a>-->
-    <!-- Button for Posts -->
-  </div>
-</nav>
-  </div>
-</header>
-
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="work/Dedai-Wei.jpg" alt="Me" class="circle-img border-dark"-/>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Dedai Wei</a>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#experience">Research</a><a href="#publications">Publications</a><a href="#service">Service</a>
       </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Dedai Wei<br>
-        </div>
-        <div id="my-title" class="text-grey">
-          Mastar in Economics <br> University of Macau
-        </div>
-        <div id="my-email" class="text-grey-light">
-          harrison.wiil@connext.um.edu.mo 
-        </div>
-
-	</div>
-      <style>
-          .mbti-icon-btn {
-            background-color: #fce4ec !important; /* 初始淡粉色 */
-            color: #ec407a !important;
-            transition: all 0.3s ease; /* 让变色过程很丝滑 */
-          }
-          .mbti-icon-btn:hover {
-            background-color: #ec407a !important; /* 划过变深粉色 */
-            color: #ffffff !important; /* 划过文字变白 */
-            transform: translateY(-3px); /* 划过还会往上跳一下，很有灵气 */
-          }
-        </style>
-
-        <div class="social-media">
-          <a href="https://scholar.google.com/citations?hl=en&user=A74U1lYAAAAJ" target="_blank" class="icon-button linkedin">
-            <i class="ai ai-google-scholar-square icon-linkedin"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/Dedai-Wei" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="work/Resume_Wei_Dedai.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://www.16personalities.com/entj-personality" target="_blank" class="icon-button github entj-btn" title="MBTI: ENTJ">
-            <i>ENTJ</i>
-            <span></span>
-          </a>
-        </div>
-
-        <style>
-          .entj-btn i {
-            font-style: normal !important;
-            font-weight: 900 !important;
-            font-size: 16px !important;
-            font-family: Arial, sans-serif !important;
-            color: #333333 !important; /* 黑色字体 */
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            height: 100% !important;
-          }
-          /* 鼠标划过时，文字变白，配合外层黑底，和 CV 效果一模一样 */
-          .entj-btn:hover i {
-            color: #ffffff !important; 
-          }
-        </style>
-      </div>
-
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
-        </div>
-        <div id="my-desc-content">
-          I enjoy running, traveling, hiking, movies, music and so much more<br>
-        </div>
-      </div> -->
     </div>
-  </div>
-  <!-- <script type="text/javascript">
-    function deepFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/deep-me.jpg');
-      $('#profile-avatar').removeClass('border-dark');
-      $('#profile-avatar').addClass('border-bright');
+  </nav>
 
-      $('#profile-cover').removeClass('shallow-bg');
-      $('#profile-cover').addClass('deep-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-light');
-      $('#profile-namecard').addClass('wrapper-dark');
-      
-      $('#my-desc').removeClass('hide');
-      $('#my-contact').addClass('hide');    
-      // console.log('Move in now...');
-    }
-
-    function shallowFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/me.jpg');
-      $('#profile-avatar').removeClass('border-bright');
-      $('#profile-avatar').addClass('border-dark');
-
-      $('#profile-cover').removeClass('deep-bg');
-      $('#profile-cover').addClass('shallow-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-dark');
-      $('#profile-namecard').addClass('wrapper-light');
-      
-      $('#my-contact').removeClass('hide');
-      $('#my-desc').addClass('hide');
-      // console.log('Move out now...');
-    }
-
-    $(function() { 
-      $('#my-pic').hover(deepFeature, shallowFeature);
-    })
-
-  </script> -->
-
-<div class="page-content">
-<div class="wrapper">
-<div id="bio" class="bio">
-
-  <h1 class="md-heading text-left">
-    <i class="fa fa-id-card" aria-hidden="true"></i>
-    About
-  </h1>
-  <div class="bio-body" style="overflow:hidden;">
-   <p>
-    I am a researcher passionate about the synergy between <b>classical statistical methods</b> and <b>cutting-edge artificial intelligence</b>. My current research focuses on <b>econometric statistical models</b>, <b>rigorous mathematical modeling</b>, and <b>complex simulations</b>. I have a strong background in neural networks and the practical application of <b>Large Language Models (LLMs)</b>.<br>
-    To date, I have published <b style="color: #d9534f;">7 SCI-indexed papers</b>, with an additional 4 currently under peer review. My ongoing work involves conceptualizing <b>LLM-driven evolutionary algorithms</b> and exploring novel frameworks for generative AI.<br>
-    I am actively preparing for <b>PhD applications for the Fall 2027 intake</b> and welcome any academic collaborations or inquiries. If you are interested in my work, please feel free to drop me an <a href="mailto:你的邮箱" target="_blank">email</a>.
-    </p>
-
-    <div style="width: 50%; float:left">
-			<h3>
-		    <i class="fa fa-star" aria-hidden="true"></i>
-		    <strong>Interests</strong>
-			</h3>
-      <ul>
-        <!-- <li><b>Multi-modality</b></li> -->
-        <li><b>LLM-driven Optimization, Verifiable LLM Frameworks</b></li>
-        <li><b>Econometric Modeling, Causaul Inference</b></li>
-        <li><b>Nature-inspired Algorithms</b></li>
-        <li><b>Open-set Recognition</b></li>
-        <li><b>Neuro-Symbolic AI</b></li>
-      </ul>
-    </div>
-
-    <div style="width: 50%; float:right">
-			<h3>
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				<strong>Education</strong>
-			</h3>
-			
-      <b>The University of Macau</b><br>
-        <ul>
-          <li>M.Sc in Economics, Sep. 2025 - July. 2027</li>
-          
-        </ul>
-      <b>Shenyang University</b><br>
-      <ul>
-        <li>B.Eng in Statisitics in Economics, Sep. 2018 - Oct. 2022</li>
-       
-      </ul>
-    </div>
-  
-  </div>
-</div>
-
-<!-- <div id="news" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-tasks" aria-hidden="true"></i>
-    News
-  </h1>  
-  <ul>
-    	<li class="indented" data-date="[Feb, 2024]"> Give a talk on <a href="https://arxiv.org/pdf/2402.03675.pdf">protein-protein interaction prediction</a> to <a href="https://jian-tang.com/students/">Jian Tang's group</a>. [<a href="files/ppiretrieval.pdf">Slide</a>]</li>
-	<li class="indented" data-date="[Dec, 2023]"> Give a talk on <a href="https://arxiv.org/pdf/2304.14621.pdf">structure-based molecule design</a> at LoG2023 Montreal. [<a href="files/mudiff.pdf">Slide</a>][<a href="https://www.youtube.com/watch?v=Z5l-gaV-DUo">Video</a>]</li>
-    	<li class="indented" data-date="[Nov, 2023]"> One paper accepted to 2nd Learning on Graphs Conference.</li>
-    	<li class="indented" data-date="[Oct, 2023]"> One paper accepted to 37th Conference on Neural Information Processing Systems.</li>
-    	<li class="indented" data-date="[Sep, 2023]"> One paper accepted to 12th International Conference on Complex Networks and their Applications.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> One paper accepted to 36th Conference on Neural Information Processing Systems, GLFrontiers, and selected for <b><span style="color: red;">Oral</span></b> presentation.</li>
-   	<li class="indented" data-date="[Oct, 2022]"> Two papers accepted to 36th Conference on Neural Information Processing Systems, and one paper selected for <b><span style="color: red;">Spotlight</span></b> presentation.</li>
-  </ul>
-</div> -->
-
-<!-- <div class="wrapper"> -->
-  <div id="timeline" class="timeline-brief">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Experiences
-    </h1>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/jd_2.png"/>
-          Feb, 2026 - Now
-        </div>
-        <div class="timeline-title">
-          Researcher @ <a href="https://baike.baidu.com/item/%E4%BA%AC%E4%B8%9C%E6%8E%A2%E7%B4%A2%E7%A0%94%E7%A9%B6%E9%99%A2/58115352" target="_blank">JD Explore Academy</a>
-        </div>
-        <div class="timeline-desc">
-          <b> Focus on Embodied AI and VLA models. </b>
-          <div class="timeline-host">
-            <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-          </div>
-        </div>
-      </div>
-    
-  
-    <div class="timeline-body">
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/damo_logo_2.avif"/>
-          Aug, 2024 - Jan, 2026
-        </div>
-        <div class="timeline-title">
-          Algorithm Expert @ <a href="https://damo.alibaba.com/?language=zh" target="_blank">DAMO Academy, Alibaba</a>
-        </div>
-        <div class="timeline-desc">
-          <b> Join as <img class="social-icon" src="images/alistar.png" style="width:20px; height:20px; vertical-align:middle; position:relative; top:-2px;"/>&#8201<a href="https://talent.alibaba.com/activity/ali-star?lang=zh" target="_blank">AliStar,</a> focus on Embodied AI and VLA models. </b>
-          <div class="timeline-host">
-            <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/MSRA_3.jpg"/>
-          Aug, 2023 - May, 2024
-        </div>
-        <div class="timeline-title">
-          Research Intern @ <a href="https://www.msra.cn/" target="_blank">MSRA</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            Supervisor: <a href="https://chenfei-wu.github.io//" target="_blank">Dr. Chenfei Wu</a>, <a href="https://nanduan.github.io//" target="_blank">Dr. Nan Duan</a>
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/SUSTech_3.png"/>
-          Aug, 2023 - July, 2024
-        </div>
-        <div class="timeline-title">
-          Visiting Student @ <a href="https://www.sustech.edu.cn/en/" target="_blank">SUSTech</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
-            Supervisor: <a href="https://www.sustech.edu.cn/en/faculties/zhangjianguo.html" target="_blank">Prof. Jianguo Zhang</a>
-          </div>
-        </div>
-      </div>
-  
-      
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/ntu_logo_2.png"/>
-          Mar, 2023 - Sep, 2023
-        </div>
-        <div class="timeline-title">
-          Visiting Student @ <a href="https://www.mmlab-ntu.com/" target="_blank">MMLab, NTU</a>
-        </div>
-        <div class="timeline-desc">
-        <div class="timeline-host">
-          Supervisor: <a href="https://liuziwei7.github.io/" target="_blank">Prof. Ziwei Liu</a>
-        </div>
-      </div>
-      </div>
-  
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <img class="social-icon" src="images/tongyi.png"/>
-            Mar, 2022 - Mar, 2023
-          </div>
-          <div class="timeline-title">
-            Research Intern @ <a href="https://tongyi.aliyun.com/welcome" target="_blank">Tongyi Lab, Alibaba</a>
-          </div>
-          <div class="timeline-desc">
-            <div class="timeline-host">
-              Supervisor: <a href="https://scholar.google.com/citations?user=ZO3OQ-8AAAAJ&hl=en" target="_blank">Dr. Shiwei Zhang</a> 
-            </div>
-          </div>
-        </div>
-  
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/hikvision.jpg"/>
-              Mar, 2020 - July, 2020
-            </div>
-            <div class="timeline-title">
-              Algorithm Intern @ <a href="https://www.hikvision.com/en/" target="_blank">HIKVISION</a>
-            </div>
-            <div class="timeline-desc">
-              <div class="timeline-host">
-                Supervisor: <a href="https://ieeexplore.ieee.org/author/37088529015" target="_blank"> Dr. Yushi Zhu</a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="timeline-item">
-            <div class="timeline-date">
-              <img class="social-icon" src="images/cuhk_logo.png"/>
-              Nov, 2019 - Feb, 2020
-            </div>
-            <div class="timeline-title">
-              Research Assistant @ <a href="https://www.cuhk.edu.cn/en" target="_blank">CUHK(SZ)</a>
-            </div>
-            <div class="timeline-desc">
-              <div class="timeline-host">
-                Supervisor: <a href="https://sites.google.com/view/zhouliguang" target="_blank">Dr. Liguang Zhou</a>, <a href="https://sites.google.com/site/lamtinlun" target="_blank">Prof. Tin Lun Lam</a>
-              </div>
-            </div>
-          </div>
-  
-    <br>
-  </div>
-  </div>
-
-
-<div id="publications" class="publications">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-file" aria-hidden="true"></i>
-    Publications (<button class="custom-button" id="show-selected-btn"> Show Representative </button> / <button class="custom-button" id="show-all-btn"> Show All </button>)
-  </h1>
-
-
-
-  <div class="pub-list">
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/rynnvla002.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          RynnVLA-002: A Unified Vision-Language-Action and World Model
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            <b>*</b>, Siteng Huang*, Yuqian Yuan*, Kehan Li*, Hangjie Yuan, Chaohui Yu, Yuming Jiang, Jiayan Guo, Xin Li, Hao Luo, Fan Wang, Deli Zhao, Hao Chen
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2511.17502" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">Code (Star 800+)</a>]
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <img class="avatar" src="work/Dedai-Wei.jpg" alt="Portrait of Dedai Wei">
+      <div>
+        <h1>Dedai Wei</h1>
+        <p class="role">Second-year Master's Student · University of Macau</p>
+        <p class="contact-line">harrison.will@connect.um.edu.mo</p>
+        <div class="socials" aria-label="Profile links">
+          <a class="profile-link email" href="mailto:harrison.will@connect.um.edu.mo" title="Email" aria-label="Email"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm10 7L4.8 7h14.4L12 12zm0 2.4L4 8.8V17h16V8.8l-8 5.6z"/></svg></span><span class="profile-label">Email</span></a>
+          <a class="profile-link scholar" href="https://scholar.google.com/citations?hl=en&amp;user=A74U1lYAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2zm0 11.63L4.72 9 12 4.37 19.28 9 12 13.63zM6 14.2V18c2.8 3 9.2 3 12 0v-3.8l-6 3.8-6-3.8z"/></svg></span><span class="profile-label">Scholar</span></a>
+          <a class="profile-link cv" href="work/Resume_Wei_Dedai.pdf" target="_blank" rel="noopener" title="CV" aria-label="Curriculum Vitae (CV)"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M5 2h10l4 4v16H5V2zm9 2v4h4l-4-4zM8 11h8V9H8v2zm0 4h8v-2H8v2zm0 4h6v-2H8v2z"/></svg></span><span class="profile-label">CV</span></a>
+          <a class="profile-link entj" href="https://www.16personalities.com/entj-personality" target="_blank" rel="noopener" title="MBTI: ENTJ" aria-label="MBTI personality: ENTJ"><span class="profile-icon text-icon">ENTJ</span><span class="profile-label">MBTI</span></a>
         </div>
       </div>
     </div>
+  </header>
 
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/worldvla.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          WorldVLA: Towards Autoregressive Action World Model
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I am a second-year master's student at the University of Macau and an AI for Science researcher developing computational methods for complex scientific and engineering problems. My work combines mathematical modeling, stochastic optimization, and modern deep learning, with particular interests in neural networks, probabilistic diffusion models, scientific machine learning, and large language model agents. I have published nine peer-reviewed papers and am preparing for PhD applications for Fall 2027.</p>
+      <div class="two-col">
+        <div>
+          <h3>Research interests</h3>
+          <div class="tags">
+            <span class="tag">AI for Science</span><span class="tag">Mathematical Modeling</span><span class="tag">Stochastic Optimization</span><span class="tag">Neural Networks</span><span class="tag">Diffusion Models</span><span class="tag">Scientific Machine Learning</span><span class="tag">LLM Agents</span>
+          </div>
         </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            <b></b>, Chaohui Yu, Hangjie Yuan, Yuming Jiang, Siteng Huang, Jiayan Guo, Xin Li, Yibing Song, Hao Luo, Fan Wang, Deli Zhao, Hao Chen
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2506.21539" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">Code (Star 800+)</a>]
+        <div>
+          <h3>Beyond research</h3>
+          <p class="personal-note">I enjoy strength training, basketball, and swimming, and hold a national professional fitness coach certification.</p>
+          <div class="tags">
+            <span class="tag personal">Certified Fitness Coach</span><span class="tag personal">Basketball</span><span class="tag personal">Swimming</span><span class="tag personal">182 cm · 78 kg</span><span class="tag personal">ENTJ</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/RynnVLA-001.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yuming Jiang, Siteng Huang, Shengke Xue, Yaxi Zhao, <b></b>, Sicong Leng, Kehan Li, Jiayan Guo, Kexiang Wang, Mingxiu Chen, Fan Wang, Deli Zhao, Xin Li
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2509.15212" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/alibaba-damo-academy/RynnVLA-001" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/token_merge.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Token Expand-Merge: Training-Free Token Compression for Vision-Language-Action Models
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yifan Ye*, Jiaqi Ma*, <b></b>, Zhihe Lu
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/abs/2512.09927" target="_blank">Paper</a>]
-          [<a class="tag" href="hhttps://github.com/Jasper-aaa/TEAM-VLA" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="true">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/self-evolve.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Self-evolved Imitation Learning in Simulated World
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Yifan Ye, <b></b>, Jing Chen, Zhihe Lu
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/pdf/2509.19460" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/Jasper-aaa/SEIL" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
-
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/vla_ad.png">
-      </div>
-      <div class="pub-right">
-        <div class="title">
-          Vision-Language-Action Models for Autonomous Driving: Past, Present, and Future
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-           Tianshuai Hu, Xiaolu Liu, Song Wang, Yiyao Zhu, Ao Liang, Lingdong Kong, Guoyang Zhao, Zeying Gong, <b>Dedai Wei</b>, Zhiyu Huang, Xiaoshuai Hao, Linfeng Li, Hang Song, Xiangtai Li, Jun Ma, Shaojie Shen, Jianke Zhu, Dacheng Tao, Ziwei Liu, Junwei Liang
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">Arxiv 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="https://arxiv.org/abs/2512.16760" target="_blank">Paper</a>]
-          [<a class="tag" href="https://github.com/worldbench/awesome-vla-for-ad" target="_blank">Code</a>]
+    <section id="experience">
+      <h2>Research Trajectory</h2>
+      <p class="trajectory-intro">My research is grounded in mathematics and statistics. Since 2024, I have progressed from stochastic processes, analytical derivation, mathematical modeling, and optimization to scientific prediction and modern learning systems. My current work integrates graph diffusion, generative models, reinforcement learning, large language models, and autonomous agents to build reliable AI systems for complex scientific and engineering problems.</p>
+      <div class="trajectory-panel">
+        <svg class="trajectory-chart" viewBox="0 0 1060 625" role="img" aria-labelledby="trajectory-title trajectory-desc">
+          <title id="trajectory-title">Research trajectory from mathematical foundations to autonomous AI systems</title>
+          <desc id="trajectory-desc">Time progresses from 2024 to the present along the horizontal axis, while abstraction and autonomy increase vertically. Five differently shaped and colored stages trace the development from mathematics through modeling, engineering, machine learning, and AI systems.</desc>
+          <rect class="rp-frame" x="150" y="70" width="860" height="445"/>
+          <line class="rp-grid" x1="150" y1="500" x2="1010" y2="500"/>
+          <line class="rp-grid" x1="150" y1="405" x2="1010" y2="405"/>
+          <line class="rp-grid" x1="150" y1="310" x2="1010" y2="310"/>
+          <line class="rp-grid" x1="150" y1="215" x2="1010" y2="215"/>
+          <line class="rp-grid" x1="150" y1="120" x2="1010" y2="120"/>
+          <line class="rp-grid" x1="220" y1="70" x2="220" y2="515"/>
+          <line class="rp-grid" x1="405" y1="70" x2="405" y2="515"/>
+          <line class="rp-grid" x1="590" y1="70" x2="590" y2="515"/>
+          <line class="rp-grid" x1="775" y1="70" x2="775" y2="515"/>
+          <line class="rp-grid" x1="940" y1="70" x2="940" y2="515"/>
+          <line class="rp-axis" x1="150" y1="550" x2="1022" y2="550"/>
+          <polygon class="rp-axis-arrow" points="1022,550 1009,543 1009,557"/>
+          <line class="rp-axis" x1="150" y1="550" x2="150" y2="57"/>
+          <polygon class="rp-axis-arrow" points="150,57 143,70 157,70"/>
+          <line class="rp-tick" x1="220" y1="544" x2="220" y2="556"/>
+          <line class="rp-tick" x1="405" y1="544" x2="405" y2="556"/>
+          <line class="rp-tick" x1="590" y1="544" x2="590" y2="556"/>
+          <line class="rp-tick" x1="775" y1="544" x2="775" y2="556"/>
+          <line class="rp-tick" x1="940" y1="544" x2="940" y2="556"/>
+          <text class="rp-axis-label" x="132" y="505" text-anchor="end">Foundations</text>
+          <text class="rp-axis-label" x="132" y="410" text-anchor="end">Model Design</text>
+          <text class="rp-axis-label" x="132" y="315" text-anchor="end">Engineering AI</text>
+          <text class="rp-axis-label" x="132" y="220" text-anchor="end">Learning Systems</text>
+          <text class="rp-axis-label" x="132" y="125" text-anchor="end">Autonomous AI</text>
+          <text class="rp-axis-label" x="590" y="613" text-anchor="middle">Research development over time</text>
+          <text class="rp-time" x="220" y="580" text-anchor="middle">2024</text>
+          <text class="rp-time" x="405" y="580" text-anchor="middle">2024–2025</text>
+          <text class="rp-time" x="590" y="580" text-anchor="middle">2025</text>
+          <text class="rp-time" x="775" y="580" text-anchor="middle">2025–2026</text>
+          <text class="rp-time" x="940" y="580" text-anchor="middle">Current</text>
+          <line class="rp-stream" x1="220" y1="500" x2="1008" y2="500" stroke="var(--rp-math)"/>
+          <line class="rp-stream" x1="405" y1="405" x2="1008" y2="405" stroke="var(--rp-model)"/>
+          <line class="rp-stream" x1="590" y1="310" x2="1008" y2="310" stroke="var(--rp-engineering)"/>
+          <line class="rp-stream" x1="775" y1="215" x2="1008" y2="215" stroke="var(--rp-learning)"/>
+          <line class="rp-stream" x1="940" y1="120" x2="1008" y2="120" stroke="var(--rp-ai)"/>
+          <polyline class="rp-growth" points="220,500 405,405 590,310 775,215 940,120"/>
+          <g class="rp-stage-group">
+            <polyline class="rp-ray" points="220,500 238,461 250,461" stroke="var(--rp-math)"/>
+            <polygon class="rp-symbol" points="220,479 226,492 241,493 229,503 233,518 220,510 207,518 211,503 199,493 214,492" fill="var(--rp-math)"/>
+            <text class="rp-stage" x="258" y="447" fill="var(--rp-math)">Mathematical Foundations</text>
+            <text class="rp-detail" x="258" y="471">Statistics · Stochastic Processes</text>
+            <text class="rp-detail" x="258" y="492">Proof · Analytical Derivation</text>
+          </g>
+          <g class="rp-stage-group">
+            <polyline class="rp-ray" points="405,405 423,366 435,366" stroke="var(--rp-model)"/>
+            <circle class="rp-symbol" cx="405" cy="405" r="17" fill="var(--rp-model)"/>
+            <text class="rp-stage" x="443" y="352" fill="var(--rp-model)">Modeling &amp; Optimization</text>
+            <text class="rp-detail" x="443" y="376">Mathematical Modeling</text>
+            <text class="rp-detail" x="443" y="397">Stochastic Optimization · Simulation</text>
+          </g>
+          <g class="rp-stage-group">
+            <polyline class="rp-ray" points="590,310 608,271 620,271" stroke="var(--rp-engineering)"/>
+            <rect class="rp-symbol" x="573" y="293" width="34" height="34" rx="2" fill="var(--rp-engineering)"/>
+            <text class="rp-stage" x="628" y="257" fill="var(--rp-engineering)">Engineering Intelligence</text>
+            <text class="rp-detail" x="628" y="281">Engineering Applications</text>
+            <text class="rp-detail" x="628" y="302">Classification · Scientific Prediction</text>
+          </g>
+          <g class="rp-stage-group">
+            <polyline class="rp-ray" points="775,215 757,176 745,176" stroke="var(--rp-learning)"/>
+            <polygon class="rp-symbol" points="775,193 797,215 775,237 753,215" fill="var(--rp-learning)"/>
+            <text class="rp-stage" x="737" y="162" text-anchor="end" fill="var(--rp-learning)">Learning &amp; Generation</text>
+            <text class="rp-detail" x="737" y="186" text-anchor="end">Deep Learning · Graph Neural Networks</text>
+            <text class="rp-detail" x="737" y="207" text-anchor="end">Graph Diffusion · Generative Models</text>
+          </g>
+          <g class="rp-stage-group">
+            <polyline class="rp-ray" points="940,120 922,87 910,87" stroke="var(--rp-ai)"/>
+            <polygon class="rp-symbol" points="921,109 940,98 959,109 959,131 940,142 921,131" fill="var(--rp-ai)"/>
+            <text class="rp-stage" x="902" y="73" text-anchor="end" fill="var(--rp-ai)">Autonomous AI Systems</text>
+            <text class="rp-detail" x="902" y="97" text-anchor="end">Reinforcement Learning</text>
+            <text class="rp-detail" x="902" y="118" text-anchor="end">Large Language Models · Agent Systems</text>
+          </g>
+        </svg>
+        <div class="trajectory-mobile" aria-label="Research trajectory from mathematical foundations in 2024 to autonomous AI systems at present">
+          <ol>
+            <li style="--rp-color:var(--rp-math)"><svg class="rp-mobile-symbol" viewBox="0 0 32 32" aria-hidden="true"><polygon points="16,2 20,11 30,12 22,19 25,29 16,23 7,29 10,19 2,12 12,11" fill="var(--rp-color)"/></svg><strong>2024 · Mathematical Foundations</strong><span>Statistics · Stochastic Processes · Proof · Analytical Derivation</span></li>
+            <li style="--rp-color:var(--rp-model)"><svg class="rp-mobile-symbol" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--rp-color)"/></svg><strong>2024–2025 · Modeling &amp; Optimization</strong><span>Mathematical Modeling · Stochastic Optimization · Numerical Simulation</span></li>
+            <li style="--rp-color:var(--rp-engineering)"><svg class="rp-mobile-symbol" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="2" fill="var(--rp-color)"/></svg><strong>2025 · Engineering Intelligence</strong><span>Engineering Applications · Classification · Scientific Prediction</span></li>
+            <li style="--rp-color:var(--rp-learning)"><svg class="rp-mobile-symbol" viewBox="0 0 32 32" aria-hidden="true"><polygon points="16,2 30,16 16,30 2,16" fill="var(--rp-color)"/></svg><strong>2025–2026 · Learning &amp; Generation</strong><span>Deep Learning · Graph Neural Networks · Graph Diffusion · Generative Models</span></li>
+            <li style="--rp-color:var(--rp-ai)"><svg class="rp-mobile-symbol" viewBox="0 0 32 32" aria-hidden="true"><polygon points="8,4 24,4 31,16 24,28 8,28 1,16" fill="var(--rp-color)"/></svg><strong>Current · Autonomous AI Systems</strong><span>Reinforcement Learning · Large Language Models · Agent Systems</span></li>
+          </ol>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="pub" data-selected="false">
-      <div class="pub-left">
-        <img class="intro-img frame" src="images/Himacon.png">
+    <section id="publications">
+      <h2>Research Portfolio</h2>
+      <p>Active submissions and ongoing projects are presented first, followed by nine peer-reviewed publications indexed on Google Scholar.</p>
+
+      <div class="paper-group"><h3 class="paper-group-title">Current Research</h3><div class="paper-grid current-grid">
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-picgo-real.png" alt="Representative physics-informed neural operator architecture" title="Representative figure: PINO (arXiv:2111.03794)"><div class="paper-body"><h3 class="paper-title">PIC-GO: Core-First Residual Routing for Runtime-Hidden Physical Regime</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">AAAI 2027</span> <span class="status">Under review</span> <span class="metric">CCF A</span></p><p class="paper-desc">A physics-informed neural operator with frozen-core fallback and selective gated residual correction.</p><p class="figure-source">Representative figure: PINO neural operator architecture · arXiv:2111.03794</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-stressgdiff-real.png" alt="Representative graph-diffusion framework for power-grid synthesis" title="Representative figure: PowerGrow (arXiv:2509.12212)"><div class="paper-body"><h3 class="paper-title">StressGDiff: Risk-Guided Heterogeneous Graph Diffusion for Stress-Scenario Discovery in Renewable-Rich Power Systems</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Reliability Engineering &amp; System Safety</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 13.7</span></p><p class="paper-desc">Risk-guided graph diffusion for rare but credible load, renewable, and price stress trajectories.</p><p class="figure-source">Representative figure: PowerGrow graph diffusion · arXiv:2509.12212</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-dynamicgraph-real.png" alt="Representative multi-relational dynamic graph neural-network architecture" title="Representative figure: MDGNN (arXiv:2402.06633)"><div class="paper-body"><h3 class="paper-title">Text-Enhanced Dynamic Multi-View Graph Diffusion Networks with LLM-Based Validation for Financial Structural Breakpoint Detection</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Information Sciences</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 6.8</span></p><p class="paper-desc">Dynamic graph diffusion, multimodal signals, and LLM validation for structural-change discovery.</p><p class="figure-source">Representative figure: MDGNN dynamic graph architecture · arXiv:2402.06633</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-timeseries.png" alt="Representative Non-stationary Transformers architecture for nonstationary time-series research" title="Representative figure: Non-stationary Transformers (arXiv:2205.14415)"><div class="paper-body"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p><p class="figure-source">Representative figure: Non-stationary Transformers · arXiv:2205.14415</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-groundmotion.png" alt="Representative diffusion architecture for probabilistic ground-motion generation" title="Representative figure: HEGGS (arXiv:2412.17333)"><div class="paper-body"><h3 class="paper-title">EI-HLRD: Engineering-Informed Hierarchical Latent Residual Diffusion for Probabilistic NGA-Sub Ground-Motion Modeling and Cross-Regional Transfer</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Engineering-informed latent diffusion for calibrated ground-motion synthesis and cross-regional scientific transfer.</p><p class="figure-source">Representative figure: HEGGS ground-motion diffusion · arXiv:2412.17333</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-subgroup.png" alt="Representative SSD-LLM workflow for language-guided subgroup discovery" title="Representative figure: SSD-LLM (arXiv:2405.02363)"><div class="paper-body"><h3 class="paper-title">FADC: LLM-Compiled Control Specifications for Intent-Aligned Subgroup Discovery</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Compiling natural-language research intent into validated typed controls for efficient and controllable subgroup discovery.</p><p class="figure-source">Representative figure: SSD-LLM workflow · arXiv:2405.02363</p></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/focus-causal.png" alt="Representative LLM-driven causal-discovery framework" title="Representative figure: LLM-driven causal discovery (arXiv:2306.16902)"><div class="paper-body"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p><p class="figure-source">Representative figure: LLM-driven causal discovery · arXiv:2306.16902</p></div></article>
+      </div></div>
+
+      <div class="paper-group"><h3 class="paper-group-title">Publications</h3><div class="paper-grid">
+        <article class="paper"><img class="figure-thumb" src="paper-images/dung-beetle-framework.jpg" alt="Adaptive population-reduction mechanism from the published paper"><div class="paper-body"><h3 class="paper-title">Multi-strategy enhanced dung beetle algorithm and its application for bankruptcy prediction</h3><p class="paper-meta"><strong>Wei, D.</strong>, Ouyang, K., et al. · <span class="venue">Neural Networks</span>, 2026 <span class="metric">JCR Q1 · IF 6.3</span></p><p class="paper-desc">Multi-strategy stochastic optimization with neural prediction and feature selection.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Multi-strategy+enhanced+dung+beetle+algorithm+and+its+application+for+bankruptcy+prediction%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/agent-overview.png" alt="Overview of the generative-agent simulation from the arXiv paper"><div class="paper-body"><h3 class="paper-title">Insurance as AI Risk Infrastructure: A Generative-Agent Simulation of AI Adoption</h3><p class="paper-meta">Yuan, Y., <strong>Wei, D.</strong>, et al. · <span class="venue">AAMAS Workshop</span>, 2026 <span class="status">Accepted</span> · Extended version under review at <span class="venue">IEEE TAI</span></p><p class="paper-desc">Generative agents simulate heterogeneous AI-adoption decisions and evaluate risk-transfer mechanisms.</p><div class="paper-links"><a href="https://arxiv.org/abs/2608.15181" target="_blank" rel="noopener">arXiv</a><a href="https://arxiv.org/pdf/2608.15181" target="_blank" rel="noopener">PDF</a><a href="https://scholar.google.com/scholar?q=%22Insurance+as+AI+Risk+Infrastructure%3A+A+Generative-Agent+Simulation+of+AI+Adoption%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/digital-framework.png" alt="Research framework from the published paper"><div class="paper-body"><h3 class="paper-title">Digital inclusive finance and high-quality enterprise development</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Scientific Reports</span>, 2025 <span class="metric">JCR Q1 · IF 4.3</span></p><p class="paper-desc">A hybrid statistical and deep-learning framework for complex panel data.</p><div class="paper-links"><a href="https://doi.org/10.1038/s41598-025-14610-y" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22A+comprehensive+analysis+of+digital+inclusive+finance%27s+influence+on+high+quality+enterprise+development%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/low-carbon-framework.svg" alt="Causal evaluation framework for the low-carbon pilot city study"><div class="paper-body"><h3 class="paper-title">Low-carbon Pilot Cities and Financialization of Listed Companies</h3><p class="paper-meta">Wan, M., <strong>Wei, D.</strong>, et al. · <span class="venue">Finance Research Letters</span>, 2025 <span class="metric">JCR Q1 · IF 7.6</span></p><p class="paper-desc">Causal modeling, mechanism testing, and robust policy-effect estimation.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.frl.2024.106386" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Low-carbon+Pilot+Cities+and+Financialization+of+Listed+Companies%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/beaver-framework.jpg" alt="Graphical abstract of the Beaver Behavior Optimizer paper"><div class="paper-body"><h3 class="paper-title">Beaver Behavior optimizer for solar PV parameter identification and engineering problems</h3><p class="paper-meta">Ouyang, K., <strong>Wei, D.</strong>, et al. · <span class="venue">Journal of Advanced Research</span>, 2025 <span class="metric">JCR Q1 · IF 13.0</span></p><p class="paper-desc">Nature-inspired stochastic optimization for photovoltaic parameter identification.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.jare.2025.09.001" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Beaver+Behavior+optimizer%22+%22solar+PV+parameter+identification%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/bird-framework.png" alt="MOEBS-Transformer framework from the published paper"><div class="paper-body"><h3 class="paper-title">Multiple Objectives Escaping Bird Search Optimization for Transformer stock prediction</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Scientific Reports</span>, 2025 <span class="metric">JCR Q1 · IF 4.3</span></p><p class="paper-desc">Multi-objective search coupled with a Transformer prediction architecture.</p><div class="paper-links"><a href="https://doi.org/10.1038/s41598-025-88883-8" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Multiple+Objectives+Escaping+Bird+Search+Optimization%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/uav-pareto.jpg" alt="Pareto optimization diagram from the published paper"><div class="paper-body"><h3 class="paper-title">Multi-objective Red-billed Blue Magpie Optimizer for UAV path planning</h3><p class="paper-meta">Ouyang, K., <strong>Wei, D.</strong>, et al. · <span class="venue">Results in Engineering</span>, 2025 <span class="metric">JCR Q1 · IF 7.9</span></p><p class="paper-desc">Pareto optimization for safe, smooth, and efficient three-dimensional paths.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.rineng.2025.106785" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Multi-objective+Red-billed+Blue+Magpie+Optimizer%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/newton-optimizer.jpg" alt="Optimizer mechanism diagram from the published paper"><div class="paper-body"><h3 class="paper-title">Newton Downhill Optimizer for engineering optimization and breast-cancer feature selection</h3><p class="paper-meta">Xiao, W., <strong>Wei, D.</strong>, et al. · <span class="venue">Biomedical Signal Processing and Control</span>, 2025 <span class="metric">JCR Q1 · IF 4.9</span></p><p class="paper-desc">A Newton-inspired optimizer for engineering search and compact feature selection.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.bspc.2025.109184" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Newton+Downhill+Optimizer%22+%22Breast+Cancer+Feature+Selection%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+        <article class="paper"><img class="figure-thumb" src="paper-images/rppg-framework.jpg" alt="FLNM-Net architecture from the published paper"><div class="paper-body"><h3 class="paper-title">FLNM-Net: Frequency-Adaptive and Luminance-Noise Aware Mask Network for rPPG</h3><p class="paper-meta">Xiao, W., Ouyang, K., …, <strong>Wei, D.</strong>, et al. · <span class="venue">Pattern Recognition</span>, 2026 <span class="metric">JCR Q1 · IF 7.5</span></p><p class="paper-desc">Frequency-adaptive neural masking for robust physiological-signal extraction from video.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.patcog.2026.113418" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22FLNM-Net%22+%22rPPG%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
+      </div></div>
+
+    </section>
+
+    <section id="service">
+      <h2>Academic Service</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-cover scientific-reports">
+            <img class="service-hero" src="journal-images/scientific-reports.jpg" alt="Official Scientific Reports brand visual">
+            <span class="journal-logo-band"><img src="journal-images/scientific-reports-logo.svg" alt="Scientific Reports"></span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Scientific Reports</h3>
+            <p class="service-count">Peer Reviewer · 2 completed reviews</p>
+            <p><span class="metric">JCR Q1 · IF 4.3</span></p>
+            <p class="service-note">Multidisciplinary research across natural sciences, engineering, and computational methods.</p>
+            <a class="service-link" href="https://www.nature.com/srep/" target="_blank" rel="noopener">Journal</a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-cover"><img src="journal-images/discover-ai.png" alt="Discover Artificial Intelligence journal cover"></div>
+          <div class="service-body">
+            <h3 class="service-title">Discover Artificial Intelligence</h3>
+            <p class="service-count">Peer Reviewer · 2 completed reviews</p>
+            <p><span class="metric">SJR Q1 · CiteScore 6.0</span></p>
+            <p class="service-note">The official Springer Nature page currently reports CiteScore rather than a Journal Impact Factor.</p>
+            <a class="service-link" href="https://link.springer.com/journal/44163" target="_blank" rel="noopener">Journal</a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-cover"><img src="journal-images/jksucis.jpg" alt="Journal of King Saud University Computer and Information Sciences cover"></div>
+          <div class="service-body">
+            <h3 class="service-title">Journal of King Saud University – Computer and Information Sciences</h3>
+            <p class="service-count">Peer Reviewer · 1 completed review</p>
+            <p><span class="metric">JCR Q1 · IF 6.9</span></p>
+            <p class="service-note">Computer science, artificial intelligence, data-driven systems, and information technologies.</p>
+            <a class="service-link" href="https://www.sciencedirect.com/journal/journal-of-king-saud-university-computer-and-information-sciences" target="_blank" rel="noopener">Journal</a>
+          </div>
+        </article>
       </div>
-      <div class="pub-right">
-        <div class="title">
-          Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
-        </div>
-        <div class="authors">
-          <font style="font-size: 11pt;">
-            Ruizhe Liu, Pei Zhou, Qian Luo, Li Sun, <b>Dedai Wei</b>, Yibing Song, Yanchao Yang
-          </font>
-        </div>
-        <div class="publish">
-          <span class="place">NeurIPS 2025</span>
-          <span class="place"></span>
-        </div>
-        <div class="tags">
-          [<a class="tag" href="" target="_blank">Paper</a>]
-          [<a class="tag" href="" target="_blank">Code</a>]
-        </div>
-      </div>
-    </div>
+    </section>
 
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/survey.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Generative Artificial Intelligence in Robotic Manipulation: A Survey
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Kun Zhang*, Peng Yun*, <b>Dedai Wei</b>, Junhao Cai, Didi Zhu, Hangjie Yuan, Chao Zhao, Tao Feng, Michael Yu Wang, Qifeng Chen, Jia Pan, Bo Yang†, Hua Chen†
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2025</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2503.03464" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/lumos.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Lumos-1: On Autoregressive Video Generation from a Unified Model Perspective
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Hangjie Yuan, Weihua Chen, <b>Dedai Wei</b>, Hu Yu, Jingyun Liang, Shuning Chang, Zhihui Lin, Tao Feng, Pengwei Liu, Jiazheng Xing, Hao Luo, Jiasheng Tang, Fan Wang, Yi Yang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICLR 2026</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2507.08801" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/alibaba-damo-academy/Lumos" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/wacv25.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Calib3D: Calibrating Model Preferences for Reliable 3D Scene Understanding
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Lingdong Kong*, Xiang Xu*, <b>Dedai Wei</b>, Wenwei Zhang, Liang Pan, Kai Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">WACV 2025 oral</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2403.17010" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/ldkong1205/Calib3D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/samcl.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Continual Learning for Segment Anything Model Adaptation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jinglong Yang, Yichen Wu, <b>Dedai Wei</b>, Wenjian Huang, Hong Wang, Jianguo Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2412.06418" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/yangjl1215/CoSAM" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/simcmf.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              SimCMF: A Simple Cross-modal Fine-tuning Strategy from Vision Foundation Models to Any Imaging Modality
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Chenyang Lei*, Liyi Chen*, <b>Dedai Wei</b>, Xiao Chen, Zhen Lei, Felix Heide, Qifeng Chen, Zhaoxiang Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">Arxiv 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2411.18669" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/mt-cly/SimCMF" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/mm24.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              iControl3D: An Interactive System for Controllable 3D Scene Generation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Xingyi Li, Yizheng Wu, <b>Dedai Wei</b>, Juewen Peng, Kewei Wang, Ke Xian, Zhe Wang, Zhiguo Cao, Guosheng Lin
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ACMMM 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/pdf/2408.01678" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/xingyi-li/iControl3D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/VLP.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Using Left and Right Brains Together: Towards Vision and Language Planning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei*</b>, Chenfei Wu*, Xiao Liu, Shengming Yin, Yixuan Pei, Jinglong Yang, Qifeng Chen, Nan Duan, Jianguo Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICML 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2402.10534" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr24-mp.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Self-Supervised Class-Agnostic Motion Prediction with Spatial and Temporal Consistency Regularizations
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Kewei Wang, Yizheng Wu, <b>Dedai Wei</b>, Zhiyu Pan, Xingyi Li, Zhe Wang, Zhiguo Cao, Guosheng Lin
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2403.13261" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/kwwcv/SelfMotion" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr24-il.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Consistent Prompting for Rehearsal-Free Continual Learning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Zhanxin Gao, <b>Dedai Wei</b>, Xiaobin Chang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2024</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2403.08568" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Zhanxin-Gao/CPrompt" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iros_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              CMDFusion: Bidirectional Fusion Network with Cross-modality Knowledge Distillation for LIDAR Semantic Segmentation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Shiwei Zhang, Yixuan Pei, Kun Li, Hang Zheng, Maochun Luo, Yingya Zhang, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">RA-L 2023</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2307.04091" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/CMDFusion" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/logo_sad.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              SAD: Segment Any RGBD
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Yizheng Wu, Kewei Wang, Xingyi Li, Jingkang Yang, Yixuan Pei, Lingdong Kong, Ziwei Liu, Qifeng Chen
-                <br>
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 workshop</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2305.14207" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/SegmentAnyRGBD" target="_blank">Code (Star 800+)</a>]
-              [<a class="tag" href="https://twitter.com/liuziwei7/status/1651461200956514306?s=46&t=MqA7wuLxDqLOBW0TfTNOMA" target="_blank">Twitter</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/seg_pt.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Segment Any Point Cloud Sequences by Distilling Vision Foundation Models
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Youquan Liu*, Lingdong Kong*, <b>Dedai Wei</b>, Runnan Chen, Wenwei Zhang, Liang Pan, Kai Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 Spotlight</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2306.09347" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/youquanl/Segment-Any-Point-Cloud" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/psg4d.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              4D Panoptic Scene Graph Generation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jingkang Yang, <b>Dedai Wei</b>, Wenxuan Peng, Shuai Liu, Fangzhou Hong, Xiangtai Li, Kaiyang Zhou, Qifeng Chen, Ziwei Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2023 Spotlight</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2405.10305" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jingkang50/PSG4D" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/CLIPFSAR_arch.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              CLIP-guided Prototype Modulating for Few-shot Action Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Xiang Wang, Shiwei Zhang, <b>Dedai Wei</b>, Changxin Gao, Yingya Zhang, Deli Zhao, Nong Sang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IJCV 2023</span>
-              <span class="place"></span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2303.02982" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/alibaba-mmai-research/CLIP-FSAR" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/cvpr_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Enlarge Instance-specific and Class-specific Information for Open-set Action Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Shiwei Zhang, Xiang Wang, Yixuan Pei, Zhiwu Qing, Yingya Zhang, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">CVPR 2023</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2303.15467" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/PSL" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iclr_2023.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              The Devil is in the Wrongly-classified Samples: Towards Unified Open-set Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei*</b>, Di Luan*, Shiwei Zhang, Yixuan Pei, Yingya Zhang, Deli Zhao, Shaojie Shen, Qifeng Chen
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICLR 2023</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://openreview.net/forum?id=xLr0I_xYGAs" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Unified_Open_Set_Recognition" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/nips2022.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Learning a Condensed Frame for Memory-Efficient Video Class-Incremental Learning
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Yixuan Pei*, Zhiwu Qing*, <b>Dedai Wei</b>, Xiang Wang, Shiwei Zhang, Yaxiong Wang, Mingqian Tang, Nong Sang, Xueming Qian
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">NeurIPS 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2211.00833" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/eccv2022_2.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Open-world Semantic Segmentation for LIDAR Point Clouds
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Peng Yun, Shiwei Zhang, Junhao Cai, Di Luan, Michael Yu Wang, Ming Liu, Mingqian Tang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ECCV 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2207.01452" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Open_world_3D_semantic_segmentation" target="_blank">Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/ral2022.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Real-Time Collision-Free Grasp Pose Detection With Geometry-Aware Refinement Using High-Resolution Volume
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Junhao Cai, <b>Dedai Wei</b>, Haokun Wang, Michael Yu Wang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">RA-L with ICRA 2022</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ieeexplore.ieee.org/abstract/document/9681231" target="_blank">Paper</a>]
-              [<a class="tag" href="https://sites.google.com/view/vpn-icra2022" target="_blank">Project Page and Code</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/3dv_2021.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Open-set 3D Object Detection
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Peng Yun, Junhao Cai, Michael Yu Wang, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">3DV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2112.01135" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/3dv_il.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Conflicts between Likelihood and Knowledge Distillation in Task Incremental Learning for 3D Object Detection
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Peng Yun, <b>Dedai Wei</b>, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">3DV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://ieeexplore.ieee.org/abstract/document/9665922" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub" data-selected="true">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/head_3.jpg">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Deep Metric Learning for Open World Semantic Segmentation
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                <b>Dedai Wei</b>, Peng Yun, Junhao Cai, Michael Yu Wang, Ming Liu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">ICCV 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2108.04562" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation" target="_blank">Code</a>]
-              [<a class="tag" href="https://youtu.be/t1vl7MzGb2Q" target="_blank">Video</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/iros2021.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              BORM: Bayesian Object Relation Model for Indoor Scene Recognition
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Liguang Zhou, <b>Dedai Wei</b>, Xingchao Wang, Zhenglong Sun, Tin Lun Lam, Yangsheng Xu
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IROS 2021</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://arxiv.org/abs/2108.00397" target="_blank">Paper</a>]
-              [<a class="tag" href="https://github.com/Jun-CEN/BORM" target="_blank">Code</a>]
-              [<a class="tag" href="https://www.youtube.com/watch?v=8lHP-sdNRJ8" target="_blank">Video</a>]
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img frame" src="images/printer.png">
-          </div>
-          <div class="pub-right">
-            <div class="title">
-              Precision forward design for 3D printing using kinematic sensitivity via Jacobian matrix considering uncertainty
-            </div>
-            <div class="authors">
-              <font style="font-size: 11pt;">
-                Jinghua Xu, Xueqing Feng, <b>Dedai Wei</b>, Shuyou Zhang
-              </font>
-            </div>
-            <div class="publish">
-              <span class="place">IJAMT 2020</span>
-            </div>
-            <div class="tags">
-              [<a class="tag" href="https://link.springer.com/article/10.1007/s00170-020-05940-4" target="_blank">Paper</a>]
-            </div>
-          </div>
-        </div>
-        
-        
-    
-
-	    
-	      
-      </div>
-    </div>
-
-    
-
-  </div>
-</div>
-</div>
-	
-<!-- JavaScript to handle button clicks -->
-<script>
-  // Get the buttons and publications
-  const showSelectedBtn = document.getElementById('show-selected-btn');
-  const showAllBtn = document.getElementById('show-all-btn');
-  const publications = document.querySelectorAll('.pub');
-
-  // Add event listener to 'Show Selected Publication' button
-  showSelectedBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      if (pub.getAttribute('data-selected') === 'true') {
-        pub.style.display = 'block';  // Show selected publication
-      } else {
-        pub.style.display = 'none';  // Hide other publications
-      }
-    });
-  });
-
-  // Add event listener to 'Show All' button
-  showAllBtn.addEventListener('click', function() {
-    publications.forEach(pub => {
-      pub.style.display = 'block';  // Show all publications
-    });
-  });
-</script>
-
-<script>
-  const repos = [
-    { owner: "alibaba-damo-academy", repo: "WorldVLA", starId: "star-count", forkId: "fork-count" },
-    { owner: "GAI4Manipulation", repo: "AwesomeGAIManipulation", starId: "star-count-2", forkId: "fork-count-2" },
-    { owner: "Jun-CEN", repo: "CMDFusion", starId: "star-count-3", forkId: "fork-count-3" },
-    { owner: "Jun-CEN", repo: "SegmentAnyRGBD", starId: "star-count-4", forkId: "fork-count-4" },
-    { owner: "Jun-CEN", repo: "PSL", starId: "star-count-5", forkId: "fork-count-5" },
-    { owner: "Jun-CEN", repo: "Unified-Open-Set-Recognition", starId: "star-count-6", forkId: "fork-count-6" },
-    { owner: "Jun-CEN", repo: "Open-world-3D-semantic-segmentation", starId: "star-count-7", forkId: "fork-count-7" },
-    { owner: "Jun-CEN", repo: "Open-World-Semantic-Segmentation", starId: "star-count-8", forkId: "fork-count-8" },
-    { owner: "Jingkang50", repo: "PSG4D", starId: "star-count-9", forkId: "fork-count-9" },
-    { owner: "youquanl", repo: "Segment-Any-Point-Cloud", starId: "star-count-10", forkId: "fork-count-10" }
-  ];
-
-  async function loadGitHubStats() {
-    for (const { owner, repo, starId, forkId } of repos) {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-        if (!res.ok) throw new Error("GitHub API error");
-        const data = await res.json();
-        document.getElementById(starId).innerText = data.stargazers_count ?? "–";
-        document.getElementById(forkId).innerText = data.forks_count ?? "–";
-      } catch (e) {
-        console.error(`Failed to load stats for ${owner}/${repo}`, e);
-        document.getElementById(starId).innerText = "–";
-        document.getElementById(forkId).innerText = "–";
-      }
-    }
-  }
-
-  loadGitHubStats();
-</script>
-
-
-<div class="wrapper">
-  <div id="codebase" class="bio">
-    <div class="bio-body" style="overflow:hidden;">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
-        GitHub
-      </h1>  
-      <div class="card-container">
-
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">
-              alibaba-damo-academy/<strong>WorldVLA</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            WorldVLA: Towards Autoregressive Action World Model.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/alibaba-damo-academy/WorldVLA/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;  <span id="star-count">–</span>
-            </a>
-            <a href="https://github.com/alibaba-damo-academy/WorldVLA/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp; <span id="fork-count">–</span>
-            </a>
-          </div>
-        </div>
-        
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation" target="_blank">
-              GAI4Manipulation/<strong>AwesomeGAIManipulation</strong>
-            </a>
-            <span class="label">Awesome List</span>
-          </div>
-          <div class="description">
-            Generative Artificial Intelligence in Robotic Manipulation: A Survey.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Markdown</div>
-            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-2">–</span>
-            </a>
-            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-2">–</span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/SegmentAnyRGBD" target="_blank">
-              Jun-CEN/<strong>SegmentAnyRGBD</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            SegmentAnyRGBD.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-4">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-4">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 9 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jingkang50/PSG4D" target="_blank">
-              Jingkang50/<strong>PSG4D</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [NeurIPS 2023] 4D Panoptic Scene Graph Generation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jingkang50/PSG4D/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-9">–</span>
-            </a>
-            <a href="https://github.com/Jingkang50/PSG4D/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-9">–</span>
-            </a>
-          </div>
-        </div>
-
-
-        <!-- Card 10 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/youquanl/Segment-Any-Point-Cloud" target="_blank">
-              youquanl/<strong>Segment-Any-Point-Cloud</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [NeurIPS 2023] Segment Any Point Cloud Sequences by Distilling Vision Foundation Models.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-10">–</span>
-            </a>
-            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-10">–</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/CMDFusion" target="_blank">
-              Jun-CEN/<strong>CMDFusion</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [RA-L 2023] CMDFusion: Bidirectional Fusion Network with Cross-modality Knowledge Distillation for LIDAR Semantic Segmentation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/CMDFusion/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-3">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/CMDFusion/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-3">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/PSL" target="_blank">
-              Jun-CEN/<strong>PSL</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [CVPR 2023] Enlarge Instance-specific and Class-specific Information for Open-set Action Recognition.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/PSL/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-5">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/PSL/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-5">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition" target="_blank">
-              Jun-CEN/<strong>Unified-Open-Set-Recognition</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ICLR 2023] The Devil is in the Wrongly-classified Samples: Towards Unified Open-set Recognition.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-6">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-6">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation" target="_blank">
-              Jun-CEN/<strong>Open-world-3D-semantic-segmentation</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ECCV 2022] Open-world Semantic Segmentation for LIDAR Point Clouds.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-7">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-7">–</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="github-card">
-          <div>
-            <a class="repo-link" href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation" target="_blank">
-              Jun-CEN/<strong>Open-World-Semantic-Segmentation</strong>
-            </a>
-            <span class="label">Project</span>
-          </div>
-          <div class="description">
-            [ICCV 2021] Deep Metric Learning for Open World Semantic Segmentation.
-          </div>
-          <div class="meta">
-            <div class="dot"></div>
-            <div>Python</div>
-            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/stargazers" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
-                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
-                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
-                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
-                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
-                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
-              </svg>
-              Star &nbsp;<span id="star-count-8">–</span>
-            </a>
-            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/network/members" target="_blank">
-              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
-                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
-                0V7a1.51 1.51 0 0 0 .82 1.34L8 
-                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
-                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
-                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
-                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
-                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
-                </path>
-              </svg>
-              Fork &nbsp;<span id="fork-count-8">–</span>
-            </a>
-          </div>
-        </div>
-
-        
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="wrapper">
-  <div id="awards" class="bio">
-    <h1 class="md-heading text-left">
-      <i class="fa fa-tasks" aria-hidden="true"></i>
-      Selected Honors & Awards
-    </h1>
-    <ul>
-  	<li> <a href="images/RI.jpeg" target="_blank">Outstanding Research Intern, Alibaba Group, 2023.</a> (15 candidates per year)</li>
-	<li> Overseas Research Award, HKUST, 2023.</li>
-	<li> Postgraduate Studentship, HKUST, 2020-2024.</li>
-	<li> School of Engineering Excellent Student Scholarship, HKUST, 2019-2020.</li>
-	<li> School of Engineering Entrance Scholarship, HKUST, 2019-2020.</li>
-    </ul>
-  </div>
-</div>
-
-<style>
-  .reviewer-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-
-  .reviewer-column {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-    padding-right: 20px;
-    font-size: 0.85em; /* 字体略微变小 */
-    line-height: 1.6;
-    position: relative;
-    padding-left: 1em;
-    margin-bottom: 4px;
-  }
-
-  .reviewer-column::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #555;
-  }
-
-  @media (max-width: 600px) {
-    .reviewer-column {
-      flex: 1 1 100%;
-    }
-  }
-
-  .reviewer-title {
-    margin-top: 12px;
-    font-weight: bold;
-  }
-</style>
-
-<div class="wrapper">
-  <div id="academicservices" class="bio">
-    <div class="bio-body" style="overflow:hidden;">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-tasks" aria-hidden="true"></i>
-        Academic Services
-      </h1>  
-
-      <div class="reviewer-title">Conference Reviewer:</div>
-      <div class="reviewer-section">
-        <div class="reviewer-column">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
-        <div class="reviewer-column">International Conference on Computer Vision (ICCV)</div>
-        <div class="reviewer-column">European Conference on Computer Vision (ECCV)</div>
-        <div class="reviewer-column">Conference on Neural Information Processing Systems (NeurIPS)</div>
-        <div class="reviewer-column">International Conference on Learning Representations (ICLR)</div>
-        <div class="reviewer-column">International Conference on Machine Learning (ICML)</div>
-        <div class="reviewer-column">International Conference on Robotics and Automation (ICRA)</div>
-        <div class="reviewer-column">International Conference on Intelligent Robots and Systems (IROS)</div>
-      </div>
-
-      <div class="reviewer-title">Journal Reviewer:</div>
-      <div class="reviewer-section">
-        <div class="reviewer-column">International Journal of Computer Vision (IJCV)</div>
-        <div class="reviewer-column">Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</div>
-        <div class="reviewer-column">Transactions on Neural Networks and Learning Systems (TNNLS)</div>
-        <div class="reviewer-column">Transactions on Circuits and Systems for Video Technology (TCSVT)</div>
-        <div class="reviewer-column">Transactions on Multimedia (TMM)</div>
-        <div class="reviewer-column">Robotics and Automation Letters (RA-L)</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="max-width: 400px; width: 100%;">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
-  </div>
-</div>
-
-
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>Personal Email:</li>
-          <li><a href="mailto:">jcenaa [at] connect.ust.hk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
-          <a href="https://scholar.google.com/citations?user=7SKAhBwAAAAJ&hl=en" target="_blank" class="icon-button github">
-          <i class="ai ai-google-scholar-square icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/Jun-CEN" target="_blank" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/jun-cen-45b995219/" target="_blank" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-         
-          <!-- <a href="work/Resume_Jun_CEN.pdf" target="_blank" class="icon-button github">
-            <i class="ai ai-cv icon-github"></i>
-            <span></span>
-          </a> -->
-          <a href="https://www.xiaohongshu.com/user/profile/616ae887000000000201f2fa" class="icon-button xiaohongshu" aria-label="小红书" target="_blank" rel="noopener noreferrer">
-            <i> <img src="https://cdn.simpleicons.org/xiaohongshu/FF2D55" alt="" width="45" height="45" style="vertical-align:middle;"> </i>
-            <span></span>
-          </a>
-      </div>
-	<div class="footer-col footer-col-3">
-    	<!--<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwillhua127.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-	<!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?user=Lxe71v4AAAAJ&hl=en&url=https%3A%2F%2Fscholar.google.com%2Fcitations&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-		<p class="text">Last updated: Feb, 2026.<br>The style of this website is borrowed from <a href='https://leoyuan.site/' target="_blank">Zeqing Yuan's</a>.</p>
-	</div>
-  </div>
-  </div>
-
-</footer>
-    <div class="back-to-top">Top</div>
-
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-    
-        }
-    });
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
-  </body>
-
-<!--
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60071442-1', 'auto');
-  ga('send', 'pageview');
-</script>
--->
-
-<!--<script src="custom-pub.js"></script>-->
+  </main>
+  <footer>© 2026 Dedai Wei · Last updated September 2026 <span class="credit">Campus photo: <a href="https://commons.wikimedia.org/wiki/File:University_of_Macau_in_Hengqin（west）2021.jpg" target="_blank" rel="noopener">Charlie Fong / Wikimedia Commons</a>, CC BY-SA 4.0</span></footer>
+</body>
 </html>

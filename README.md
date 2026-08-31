@@ -1,2 +1,4 @@
-# Homepage
-This is my personal website: cen-jun.com. Go live on August 29, 2021.
+# Dedai Wei — Academic Homepage
+
+Personal academic website of Dedai Wei, hosted with GitHub Pages at
+https://dedai-wei.github.io/.
