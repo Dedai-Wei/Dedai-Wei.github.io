@@ -88,9 +88,13 @@
     .paper-group-title { display:flex; align-items:center; gap:12px; margin:0 0 15px; color:var(--blue2); }
     .paper-group-title:after { content:""; height:1px; flex:1; background:var(--line); }
     .paper-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
-    .current-grid { grid-template-columns:1fr; }
-    .current-grid .paper { grid-template-columns:250px 1fr; min-height:190px; }
-    .current-grid .paper img { min-height:190px; }
+    .current-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:current-paper; }
+    .current-item { position:relative; padding:15px 18px 15px 58px; border:1px solid var(--line); border-radius:8px; background:#fff; counter-increment:current-paper; transition:border-color .2s,box-shadow .2s; }
+    .current-item:before { content:counter(current-paper,decimal-leading-zero); position:absolute; left:17px; top:16px; color:#78909b; font:700 .82rem/1.4 "Avenir Next",Arial,sans-serif; letter-spacing:.04em; }
+    .current-item:hover { border-color:#b8cbd4; box-shadow:0 5px 16px rgba(25,55,70,.07); }
+    .current-item .paper-title { margin-bottom:6px; }
+    .current-item .paper-meta { margin-bottom:5px; }
+    .current-item .paper-desc { margin:0; color:#46545e; }
     .paper { display:grid; grid-template-columns:150px 1fr; min-height:170px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
     .paper:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
     .paper img { width:100%; height:100%; min-height:170px; object-fit:cover; background:var(--blue2); }
@@ -100,7 +104,6 @@
     .paper-meta { margin:0 0 8px; color:var(--muted); font-size:.82rem; line-height:1.45; }
     .metric { display:inline-block; margin:3px 2px 0 4px; padding:1px 6px; border-radius:4px; color:#18536a; background:#e4f0f3; font-style:normal; font-weight:800; white-space:nowrap; }
     .paper-desc { margin:0 0 10px; font-size:.86rem; line-height:1.5; }
-    .figure-source { margin:-3px 0 0; color:#7a878e; font-size:.72rem; font-style:italic; }
     .paper-links { display:flex; flex-wrap:wrap; gap:7px; }
     .paper-links a { padding:3px 8px; border:1px solid #b9ccd4; border-radius:4px; font-size:.78rem; font-weight:700; }
     .compact { margin:5px 0; padding-left:21px; }
@@ -129,7 +132,6 @@
       h1 { font-size:2.35rem; }
       .two-col,.paper-grid { grid-template-columns:1fr; gap:20px; }
       .paper { grid-template-columns:120px 1fr; }
-      .current-grid .paper { grid-template-columns:160px 1fr; }
       .service-card { grid-template-columns:135px 1fr; }
       section { padding:25px 22px; }
       .trajectory-panel { padding:8px 0 0; }
@@ -138,8 +140,9 @@
     }
     @media (max-width:480px) {
       .paper { grid-template-columns:1fr; }
-      .current-grid .paper { grid-template-columns:1fr; }
       .paper img { height:150px; min-height:0; }
+      .current-item { padding:14px 14px 14px 48px; }
+      .current-item:before { left:13px; top:15px; }
       .service-card { grid-template-columns:1fr; }
       .service-cover { height:230px; min-height:0; }
     }
@@ -289,15 +292,15 @@
       <h2>Research Portfolio</h2>
       <p>Active submissions and ongoing projects are presented first, followed by nine peer-reviewed publications indexed on Google Scholar.</p>
 
-      <div class="paper-group"><h3 class="paper-group-title">Current Research</h3><div class="paper-grid current-grid">
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-picgo-real.png" alt="Representative physics-informed neural operator architecture" title="Representative figure: PINO (arXiv:2111.03794)"><div class="paper-body"><h3 class="paper-title">PIC-GO: Core-First Residual Routing for Runtime-Hidden Physical Regime</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">AAAI 2027</span> <span class="status">Under review</span> <span class="metric">CCF A</span></p><p class="paper-desc">A physics-informed neural operator with frozen-core fallback and selective gated residual correction.</p><p class="figure-source">Representative figure: PINO neural operator architecture · arXiv:2111.03794</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-stressgdiff-real.png" alt="Representative graph-diffusion framework for power-grid synthesis" title="Representative figure: PowerGrow (arXiv:2509.12212)"><div class="paper-body"><h3 class="paper-title">StressGDiff: Risk-Guided Heterogeneous Graph Diffusion for Stress-Scenario Discovery in Renewable-Rich Power Systems</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Reliability Engineering &amp; System Safety</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 13.7</span></p><p class="paper-desc">Risk-guided graph diffusion for rare but credible load, renewable, and price stress trajectories.</p><p class="figure-source">Representative figure: PowerGrow graph diffusion · arXiv:2509.12212</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-dynamicgraph-real.png" alt="Representative multi-relational dynamic graph neural-network architecture" title="Representative figure: MDGNN (arXiv:2402.06633)"><div class="paper-body"><h3 class="paper-title">Text-Enhanced Dynamic Multi-View Graph Diffusion Networks with LLM-Based Validation for Financial Structural Breakpoint Detection</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Information Sciences</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 6.8</span></p><p class="paper-desc">Dynamic graph diffusion, multimodal signals, and LLM validation for structural-change discovery.</p><p class="figure-source">Representative figure: MDGNN dynamic graph architecture · arXiv:2402.06633</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-timeseries.png" alt="Representative Non-stationary Transformers architecture for nonstationary time-series research" title="Representative figure: Non-stationary Transformers (arXiv:2205.14415)"><div class="paper-body"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p><p class="figure-source">Representative figure: Non-stationary Transformers · arXiv:2205.14415</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-groundmotion.png" alt="Representative diffusion architecture for probabilistic ground-motion generation" title="Representative figure: HEGGS (arXiv:2412.17333)"><div class="paper-body"><h3 class="paper-title">EI-HLRD: Engineering-Informed Hierarchical Latent Residual Diffusion for Probabilistic NGA-Sub Ground-Motion Modeling and Cross-Regional Transfer</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Engineering-informed latent diffusion for calibrated ground-motion synthesis and cross-regional scientific transfer.</p><p class="figure-source">Representative figure: HEGGS ground-motion diffusion · arXiv:2412.17333</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-subgroup.png" alt="Representative SSD-LLM workflow for language-guided subgroup discovery" title="Representative figure: SSD-LLM (arXiv:2405.02363)"><div class="paper-body"><h3 class="paper-title">FADC: LLM-Compiled Control Specifications for Intent-Aligned Subgroup Discovery</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Compiling natural-language research intent into validated typed controls for efficient and controllable subgroup discovery.</p><p class="figure-source">Representative figure: SSD-LLM workflow · arXiv:2405.02363</p></div></article>
-        <article class="paper"><img class="figure-thumb" src="paper-images/focus-causal.png" alt="Representative LLM-driven causal-discovery framework" title="Representative figure: LLM-driven causal discovery (arXiv:2306.16902)"><div class="paper-body"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p><p class="figure-source">Representative figure: LLM-driven causal discovery · arXiv:2306.16902</p></div></article>
-      </div></div>
+      <div class="paper-group"><h3 class="paper-group-title">Current Research</h3><ol class="current-list">
+        <li class="current-item"><h3 class="paper-title">PIC-GO: Core-First Residual Routing for Runtime-Hidden Physical Regime</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">AAAI 2027</span> <span class="status">Under review</span> <span class="metric">CCF A</span></p><p class="paper-desc">A physics-informed neural operator with frozen-core fallback and selective gated residual correction.</p></li>
+        <li class="current-item"><h3 class="paper-title">StressGDiff: Risk-Guided Heterogeneous Graph Diffusion for Stress-Scenario Discovery in Renewable-Rich Power Systems</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Reliability Engineering &amp; System Safety</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 13.7</span></p><p class="paper-desc">Risk-guided graph diffusion for rare but credible load, renewable, and price stress trajectories.</p></li>
+        <li class="current-item"><h3 class="paper-title">Text-Enhanced Dynamic Multi-View Graph Diffusion Networks with LLM-Based Validation for Financial Structural Breakpoint Detection</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Information Sciences</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 6.8</span></p><p class="paper-desc">Dynamic graph diffusion, multimodal signals, and LLM validation for structural-change discovery.</p></li>
+        <li class="current-item"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p></li>
+        <li class="current-item"><h3 class="paper-title">EI-HLRD: Engineering-Informed Hierarchical Latent Residual Diffusion for Probabilistic NGA-Sub Ground-Motion Modeling and Cross-Regional Transfer</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Engineering-informed latent diffusion for calibrated ground-motion synthesis and cross-regional scientific transfer.</p></li>
+        <li class="current-item"><h3 class="paper-title">FADC: LLM-Compiled Control Specifications for Intent-Aligned Subgroup Discovery</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Compiling natural-language research intent into validated typed controls for efficient and controllable subgroup discovery.</p></li>
+        <li class="current-item"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p></li>
+      </ol></div>
 
       <div class="paper-group"><h3 class="paper-group-title">Publications</h3><div class="paper-grid">
         <article class="paper"><img class="figure-thumb" src="paper-images/dung-beetle-framework.jpg" alt="Adaptive population-reduction mechanism from the published paper"><div class="paper-body"><h3 class="paper-title">Multi-strategy enhanced dung beetle algorithm and its application for bankruptcy prediction</h3><p class="paper-meta"><strong>Wei, D.</strong>, Ouyang, K., et al. · <span class="venue">Neural Networks</span>, 2026 <span class="metric">JCR Q1 · IF 6.3</span></p><p class="paper-desc">Multi-strategy stochastic optimization with neural prediction and feature selection.</p><div class="paper-links"><a href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener">DOI</a><a href="https://scholar.google.com/scholar?q=%22Multi-strategy+enhanced+dung+beetle+algorithm+and+its+application+for+bankruptcy+prediction%22" target="_blank" rel="noopener">Scholar</a></div></div></article>
