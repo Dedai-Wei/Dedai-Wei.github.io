@@ -75,8 +75,56 @@
     .research-entries p { margin:0; line-height:1.65; font-size:.95rem; }
     .research-entries strong { color:var(--blue2); }
     .mentor-detail { color:var(--muted); }
-    .focus-summary { margin:17px 0 23px; padding:16px 20px; border-left:3px solid #278878; background:#f2f7f8; border-radius:0 7px 7px 0; font-size:.95rem; }
-    .focus-summary p:last-child { margin-bottom:0; }
+    .about-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 22px; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--blue); }
+    .about-heading h2 { margin:0; padding:0; border:0; }
+    .about-phd { color:#416c63; background:#edf5f2; border-radius:99px; padding:5px 12px; font-size:.8rem; }
+    .about-intro { max-width:890px; margin:0 0 22px; color:#42535f; }
+    .about-explorer { --about-violet:#70579b; --about-teal:#237c74; --about-copper:#aa633a; }
+    .about-explorer [hidden] { display:none !important; }
+    .about-tabs { display:flex; flex-wrap:wrap; gap:6px; padding:5px; margin-bottom:19px; background:#f1f5f7; border:1px solid #e1e8ed; border-radius:10px; }
+    .about-tab { display:flex; align-items:center; justify-content:center; gap:9px; flex:1; min-height:44px; padding:10px 12px; border:1px solid transparent; border-radius:7px; color:#536575; background:transparent; font:inherit; font-size:.9rem; font-weight:400; line-height:1.3; cursor:pointer; transition:color .18s,background .18s,border-color .18s; }
+    .about-tab svg { width:18px; height:18px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+    .about-tab:hover { color:var(--blue2); background:#e5edf1; }
+    .about-tab[aria-selected="true"] { color:var(--blue2); background:#fff; border-color:#c9d9e1; box-shadow:0 2px 5px rgba(25,55,70,.06); }
+    .about-explorer :focus-visible,.about-personal summary:focus-visible { outline:2px solid #367d9f; outline-offset:4px; }
+    .about-panel + .about-panel { margin-top:26px; }
+    .about-explorer.is-interactive .about-panel { margin-top:0; animation:about-reveal .2s ease; }
+    .about-explorer.is-interactive .about-panel-heading { display:none; }
+    .about-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .about-card { --card-accent:var(--blue); min-width:0; padding:17px 18px; border:1px solid #dfe7ec; border-radius:9px; background:linear-gradient(150deg,#f7fafb,#fff 75%); }
+    .about-card.math { --card-accent:var(--about-violet); }
+    .about-card.learning { --card-accent:var(--about-teal); }
+    .about-card.agents { --card-accent:var(--about-copper); }
+    .about-motif { width:100%; max-width:190px; height:52px; display:block; margin:0 0 10px; color:var(--card-accent); fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .about-motif .motif-soft { stroke:currentColor; opacity:.25; }
+    .about-motif .motif-fill { fill:currentColor; stroke:none; opacity:.12; }
+    .about-motif .motif-node { fill:#fff; }
+    .about-card h4 { margin:0 0 7px; color:var(--card-accent); font:400 1.1rem/1.3 Georgia,"Times New Roman",serif; }
+    .about-card p { margin:0; color:#52616d; font-size:.88rem; line-height:1.6; }
+    .about-panel-foot { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:7px 18px; margin:15px 0 0; font-size:.82rem; color:var(--muted); }
+    .about-panel-foot a { text-decoration:none; }
+    .about-project .project-type { display:block; margin-bottom:10px; color:#607584; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; }
+    .about-project h4 { color:var(--blue2); }
+    .about-project .project-venue { margin-top:11px; padding-top:10px; border-top:1px solid #e0e8ec; color:#385c6b; font-size:.78rem; line-height:1.55; }
+    .project-venue span { display:block; color:#64737c; }
+    .about-project-notes { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px; padding:13px 0 0; border-top:1px solid var(--line); }
+    .about-project-notes p { margin:0; color:#52616d; font-size:.82rem; line-height:1.65; }
+    .about-venue { display:block; min-width:0; overflow:hidden; border:1px solid #dfe7ec; border-radius:9px; background:#fff; transition:border-color .18s,transform .18s; }
+    .about-venue:hover { border-color:#9bb8c6; transform:translateY(-2px); }
+    .about-venue img { display:block; width:100%; height:110px; padding:12px; object-fit:contain; background:#fbfcfd; border-bottom:1px solid #e7edf0; }
+    .about-venue-caption { display:block; padding:12px 14px 14px; }
+    .about-venue-name { display:block; color:var(--blue2); font:400 1.02rem/1.35 Georgia,"Times New Roman",serif; }
+    .about-venue-topic { display:block; color:#5e6975; font-size:.8rem; margin-top:5px; }
+    .about-venue-doi { display:block; margin-top:8px; color:var(--blue); font-size:.76rem; }
+    .about-personal { margin-top:21px; padding-top:15px; border-top:1px solid var(--line); }
+    .about-personal summary { display:flex; align-items:center; flex-wrap:wrap; gap:6px 14px; min-height:44px; color:#465966; font-size:.87rem; cursor:pointer; list-style:none; }
+    .about-personal summary::-webkit-details-marker { display:none; }
+    .about-personal summary:after { content:"+"; margin-left:auto; color:var(--blue); font-size:1.25rem; }
+    .about-personal[open] summary:after { content:"−"; }
+    .about-personal .personal-hint { color:#697580; font-size:.81rem; }
+    .about-personal p { margin:8px 0 12px; font-size:.9rem; }
+    .about-personal .tags { justify-content:flex-start; }
+    @keyframes about-reveal { from { opacity:.4; transform:translateY(3px); } to { opacity:1; transform:translateY(0); } }
     .meta { color:var(--muted); font-size:.92rem; }
     .trajectory-intro { max-width:930px; margin:-2px 0 24px; color:#43515d; font-size:1rem; line-height:1.72; }
     .trajectory-panel { --rp-math:#6f46b8; --rp-model:#087b72; --rp-engineering:#c7661b; --rp-learning:#2267a8; --rp-ai:#bd3f62; overflow:hidden; padding:4px 0 0; }
@@ -161,12 +209,34 @@
       .trajectory-panel { padding:8px 0 0; }
       .trajectory-chart { display:none; }
       .trajectory-mobile { display:block; }
+      .about-grid { grid-template-columns:1fr; gap:10px; }
+      .about-card:not(.about-project) { display:grid; grid-template-columns:65px minmax(0,1fr); column-gap:12px; padding:15px; }
+      .about-card:not(.about-project) h4 { align-self:center; margin:0; font-size:1rem; }
+      .about-card:not(.about-project) p { grid-column:1 / -1; margin-top:8px; }
+      .about-motif { grid-row:1; width:65px; height:38px; align-self:center; margin:0; }
+      .about-project-notes { grid-template-columns:1fr; gap:9px; }
+      .about-venue { display:grid; grid-template-columns:95px minmax(0,1fr); align-items:center; }
+      .about-venue img { height:100%; min-height:110px; border-bottom:0; border-right:1px solid #e7edf0; padding:8px; }
+      .about-panel-foot { align-items:flex-start; }
     }
     @media (max-width:480px) {
       .paper img { height:150px; min-height:0; }
       .current-item { padding:14px 14px 14px 48px; }
       .current-item:before { left:13px; top:15px; }
       .service-cover { height:230px; min-height:0; }
+      .about-tabs { gap:3px; padding:4px; }
+      .about-tab { flex-direction:column; gap:6px; padding:9px 3px; font-size:.78rem; }
+      .about-heading { gap:10px; }
+      .about-phd { font-size:.74rem; padding:4px 9px; }
+      .about-personal .personal-hint { flex-basis:85%; order:2; }
+      .about-personal summary:after { margin-top:-2px; }
+      .about-card:not(.about-project) { grid-template-columns:55px minmax(0,1fr); column-gap:11px; }
+      .about-motif { width:55px; }
+      .about-venue { grid-template-columns:75px minmax(0,1fr); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .about-explorer *, .about-explorer *:before, .about-explorer *:after { animation:none !important; transition:none !important; }
     }
   </style>
 </head>
@@ -201,28 +271,114 @@
 
   <main>
     <section id="about">
-      <h2>About</h2>
-      <p>I am a Research Assistant at the University of Macau's <a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener">State Key Laboratory of Internet of Things for Smart City</a>, working with Dr. <a href="https://feg.um.edu.mo/people/sckuok/" target="_blank" rel="noopener">Sin Chi Kuok</a>. My research integrates stochastic processes, statistical inference, mathematical modeling, and optimization with machine learning to develop reliable computational and generative methods for scientific and engineering problems, with a focus on uncertainty quantification, physical constraints, and generalization. My work has appeared in <em>Pattern Recognition</em>, <em>Neural Networks</em>, <em>Journal of Advanced Research</em>, <em>Results in Engineering</em>, and <em>Biomedical Signal Processing and Control</em>. I am preparing for PhD applications for Fall 2027.</p>
-      <div class="focus-summary">
-        <h3>Current focus</h3>
-        <p>I study text-enhanced dynamic graph diffusion for structural-change discovery (<em>Information Sciences</em>, under review); physics-informed neural operators through <strong>PIC-GO</strong> (<em>AAAI 2027</em>, CCF A, under review); and engineering-constrained scenario generation through <strong>StressGDiff</strong> (<em>Reliability Engineering &amp; System Safety</em>, under review). <strong>EI-HLRD</strong> explores probabilistic ground-motion modeling and cross-regional transfer, while <strong>FADC</strong> and <strong>CausalMB-LLM</strong> investigate natural-language-guided discovery and causal structure learning.</p>
-        <p>My generative-agent study, <a href="https://arxiv.org/abs/2608.15181" target="_blank" rel="noopener">Insurance as AI Risk Infrastructure</a>, was accepted at an AAMAS workshop; its extended version is under review at <em>IEEE Transactions on Artificial Intelligence</em> (CiteScore 6.4). <a href="#publications">See projects, publication details, and venue metrics →</a></p>
+      <div class="about-heading">
+        <h2>About</h2>
+        <span class="about-phd">PhD applications · Fall 2027</span>
       </div>
-      <div class="two-col">
-        <div>
-          <h3>Research interests</h3>
-          <div class="tags">
-            <span class="tag">AI for Science</span><span class="tag">Stochastic Modeling</span><span class="tag">Physics-Informed Neural Operators</span><span class="tag">Graph Diffusion</span><span class="tag">Engineering-Constrained Generation</span><span class="tag">LLM Agents</span>
-          </div>
+      <p class="about-intro">I work with Dr. <a href="https://feg.um.edu.mo/people/sckuok/" target="_blank" rel="noopener">Sin Chi Kuok</a> at the <a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener" title="University of Macau — State Key Laboratory of Internet of Things for Smart City">UM State Key Laboratory of IoT for Smart City</a>. My research connects mathematical and statistical foundations with machine learning for AI for Science.</p>
+      <div class="about-explorer" id="about-explorer">
+        <div class="about-tabs" aria-label="Explore my research" hidden>
+          <button class="about-tab" type="button" id="about-tab-foundations" aria-controls="about-foundations">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V5m0 13h18M5 15c5 0 3-10 7-10s2 10 8 10"/></svg>
+            <span>Foundations</span>
+          </button>
+          <button class="about-tab" type="button" id="about-tab-projects" aria-controls="about-projects">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 2-7 11L6 6m0 0 5 13M18 8l-7 11"/><circle cx="6" cy="6" r="2.5" fill="currentColor" stroke="none"/><circle cx="18" cy="8" r="2.5" fill="currentColor" stroke="none"/><circle cx="11" cy="19" r="2.5" fill="currentColor" stroke="none"/></svg>
+            <span>Current work</span>
+          </button>
+          <button class="about-tab" type="button" id="about-tab-venues" aria-controls="about-venues">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3V4m9 2v15M6 8h3m6 0h3M6 12h3m6 0h3"/></svg>
+            <span>Selected venues</span>
+          </button>
         </div>
-        <div>
-          <h3>Beyond research</h3>
-          <p class="personal-note">I enjoy strength training, basketball, and swimming, and hold a national professional fitness coach certification.</p>
-          <div class="tags">
-            <span class="tag personal">Certified Fitness Coach</span><span class="tag personal">Basketball</span><span class="tag personal">Swimming</span><span class="tag personal">182 cm · 78 kg</span><span class="tag personal">ENTJ</span>
+        <div class="about-panel" id="about-foundations" aria-labelledby="foundations-heading">
+          <h3 class="about-panel-heading" id="foundations-heading">Research foundations</h3>
+          <div class="about-grid">
+            <div class="about-card math">
+              <svg class="about-motif" viewBox="0 0 180 62" aria-hidden="true">
+                <path class="motif-soft" d="M6 51h166M22 8v47"/>
+                <path class="motif-fill" d="M25 50C52 50 57 13 82 13s27 37 61 37Z"/>
+                <path d="M25 50C52 50 57 13 82 13s27 37 61 37"/>
+                <path class="motif-soft" d="M82 13v37M54 31v19m58-19v19"/>
+                <circle cx="82" cy="13" r="3" fill="currentColor" stroke="none"/>
+              </svg>
+              <h4>Mathematical foundations</h4>
+              <p>Stochastic processes, statistical inference, mathematical modeling &amp; optimization.</p>
+            </div>
+            <div class="about-card learning">
+              <svg class="about-motif" viewBox="0 0 180 62" aria-hidden="true">
+                <path class="motif-soft" d="m22 14 46 0 45 17 44-17M22 48l46 0 45-17 44 17M22 14l46 34m-46 0 46-34m0 0v34"/>
+                <path d="m22 14 46 17 45 0 44-17M22 48l46-17m45 0 44 17"/>
+                <g class="motif-node"><circle cx="22" cy="14" r="5"/><circle cx="22" cy="48" r="5"/><circle cx="68" cy="14" r="5"/><circle cx="68" cy="31" r="5"/><circle cx="68" cy="48" r="5"/><rect x="106" y="24" width="14" height="14" rx="2"/><circle cx="157" cy="14" r="5"/><circle cx="157" cy="48" r="5"/></g>
+              </svg>
+              <h4>Scientific machine learning</h4>
+              <p>Neural operators, graph diffusion &amp; generative models with physical constraints.</p>
+            </div>
+            <div class="about-card agents">
+              <svg class="about-motif" viewBox="0 0 180 62" aria-hidden="true">
+                <rect class="motif-fill" x="65" y="16" width="44" height="29" rx="6"/>
+                <path d="M40 31h22m51 0h23M87 13V5h57v15M87 48v9H30V44m29-17 4 4-4 4m74-8 4 4-4 4"/>
+                <rect x="10" y="20" width="29" height="22" rx="4"/><rect x="66" y="16" width="43" height="29" rx="6"/><path d="m141 19 15 0 9 12-9 12h-15l-9-12Z"/>
+                <path d="M18 27h13m-13 7h8M78 27h19m-19 8h11"/>
+              </svg>
+              <h4>Language &amp; intelligent systems</h4>
+              <p>LLM agents, causal discovery &amp; natural-language-guided scientific analysis.</p>
+            </div>
           </div>
+          <p class="about-panel-foot"><span>Uncertainty · Physical constraints · Generalization</span><a href="#experience">Explore my research trajectory →</a></p>
+        </div>
+        <div class="about-panel" id="about-projects" aria-labelledby="projects-heading">
+          <h3 class="about-panel-heading" id="projects-heading">Current research</h3>
+          <div class="about-grid">
+            <div class="about-card about-project">
+              <span class="project-type">01 / Graph diffusion</span>
+              <h4>Text-enhanced dynamic graphs</h4>
+              <p>Multi-view diffusion and LLM validation for structural-change discovery.</p>
+              <p class="project-venue">Information Sciences <span>Under review · JCR Q1 · IF 6.8</span></p>
+            </div>
+            <div class="about-card about-project">
+              <span class="project-type">02 / Neural operators</span>
+              <h4>PIC-GO</h4>
+              <p>Physics-informed operator learning across hidden physical regimes.</p>
+              <p class="project-venue">AAAI 2027 <span>Under review · CCF A</span></p>
+            </div>
+            <div class="about-card about-project">
+              <span class="project-type">03 / Constrained generation</span>
+              <h4>StressGDiff</h4>
+              <p>Risk-guided graph diffusion for power-system stress scenarios.</p>
+              <p class="project-venue">Reliability Engineering &amp; System Safety <span>Under review · JCR Q1 · IF 13.7</span></p>
+            </div>
+          </div>
+          <div class="about-project-notes">
+            <p>Also exploring: EI-HLRD for probabilistic modeling and transfer; FADC &amp; CausalMB-LLM for controllable discovery and causal learning.</p>
+            <p><a href="https://arxiv.org/abs/2608.15181" target="_blank" rel="noopener">Insurance as AI Risk Infrastructure</a>: AAMAS workshop accepted; extension under review at IEEE Transactions on Artificial Intelligence · CiteScore 6.4.</p>
+          </div>
+          <p class="about-panel-foot"><span>Submission status is shown separately from published work.</span><a href="#publications">All projects &amp; publication details →</a></p>
+        </div>
+        <div class="about-panel" id="about-venues" aria-labelledby="venues-heading">
+          <h3 class="about-panel-heading" id="venues-heading">Selected publication venues</h3>
+          <div class="about-grid">
+            <a class="about-venue" href="https://doi.org/10.1016/j.patcog.2026.113418" target="_blank" rel="noopener">
+              <img src="paper-images/rppg-framework.jpg" alt="FLNM-Net architecture from my Pattern Recognition coauthored paper" loading="lazy">
+              <span class="about-venue-caption"><span class="about-venue-name">Pattern Recognition</span><span class="about-venue-topic">Neural networks for robust sensing</span><span class="about-venue-doi">Read paper · DOI ↗</span></span>
+            </a>
+            <a class="about-venue" href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener">
+              <img src="paper-images/dung-beetle-framework.jpg" alt="Optimization framework from my Neural Networks paper" loading="lazy">
+              <span class="about-venue-caption"><span class="about-venue-name">Neural Networks</span><span class="about-venue-topic">Stochastic optimization &amp; prediction</span><span class="about-venue-doi">Read paper · DOI ↗</span></span>
+            </a>
+            <a class="about-venue" href="https://doi.org/10.1016/j.jare.2025.09.001" target="_blank" rel="noopener">
+              <img src="paper-images/beaver-framework.jpg" alt="Beaver Behavior Optimizer graphical abstract from my Journal of Advanced Research coauthored paper" loading="lazy">
+              <span class="about-venue-caption"><span class="about-venue-name">Journal of Advanced Research</span><span class="about-venue-topic">Engineering optimization</span><span class="about-venue-doi">Read paper · DOI ↗</span></span>
+            </a>
+          </div>
+          <p class="about-panel-foot"><span>Also: Results in Engineering · Biomedical Signal Processing and Control</span><a href="#publications">View the full publication list →</a></p>
         </div>
       </div>
+      <details class="about-personal">
+        <summary><span>Beyond research</span><span class="personal-hint">Strength training · Basketball · Swimming</span></summary>
+        <p class="personal-note">I hold a national professional fitness coach certification and enjoy staying active outside research.</p>
+        <div class="tags"><span class="tag personal">Certified Fitness Coach</span><span class="tag personal">182 cm · 78 kg</span><span class="tag personal">ENTJ</span></div>
+      </details>
     </section>
 
     <section id="experience">
@@ -392,5 +548,47 @@
 
   </main>
   <footer>© 2026 Dedai Wei · Last updated 29 September 2026 <span class="credit">Laboratory background photo: <a href="https://www.um.edu.mo/news-and-press-releases/press-release/detail/64245/" target="_blank" rel="noopener">University of Macau</a> · Intelligent transportation research facility (cropped)</span></footer>
+  <script>
+    (() => {
+      const explorer = document.getElementById('about-explorer');
+      if (!explorer) return;
+      const tablist = explorer.querySelector('.about-tabs');
+      const tabs = Array.from(tablist.querySelectorAll('.about-tab'));
+      const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+      if (panels.some(panel => !panel)) return;
+
+      const selectTab = (index, focus = false) => {
+        tabs.forEach((tab, i) => {
+          const selected = i === index;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          panels[i].hidden = !selected;
+        });
+        if (focus) tabs[index].focus();
+      };
+
+      tablist.setAttribute('role', 'tablist');
+      tabs.forEach((tab, index) => {
+        tab.setAttribute('role', 'tab');
+        panels[index].setAttribute('role', 'tabpanel');
+        panels[index].setAttribute('aria-labelledby', tab.id);
+        panels[index].tabIndex = 0;
+        tab.addEventListener('click', () => selectTab(index));
+        tab.addEventListener('keydown', event => {
+          let next;
+          if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          selectTab(next, true);
+        });
+      });
+      selectTab(0);
+      explorer.classList.add('is-interactive');
+      tablist.hidden = false;
+    })();
+  </script>
 </body>
 </html>
