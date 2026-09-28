@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage of Dedai Wei, a second-year master's student at the University of Macau and an AI for Science researcher.">
-  <meta name="keywords" content="Dedai Wei, AI for Science, mathematical modeling, stochastic optimization, neural networks, diffusion models, LLM agents">
-  <title>Dedai Wei | Academic Homepage</title>
+  <meta name="description" content="Dedai Wei, Research Assistant at the University of Macau's State Key Laboratory of Internet of Things for Smart City. AI for Science, structural health monitoring, and probabilistic ground-motion modeling; publications in Pattern Recognition, Neural Networks, and Journal of Advanced Research. Current projects include PIC-GO, StressGDiff, EI-HLRD, and LLM agents.">
+  <meta name="keywords" content="Dedai Wei, University of Macau, AI for Science, structural health monitoring, probabilistic ground-motion modeling, stochastic optimization, neural operators, graph diffusion, LLM agents">
+  <link rel="canonical" href="https://dedai-wei.github.io/">
+  <meta property="og:title" content="Dedai Wei | AI for Science · University of Macau">
+  <meta property="og:description" content="Research Assistant at the University of Macau. Mathematical and statistical foundations for scientific machine learning, engineering reliability, and intelligent systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dedai-wei.github.io/">
+  <title>Dedai Wei | AI for Science · University of Macau</title>
   <style>
     :root { --ink:#17202a; --muted:#5e6975; --line:#dce3e8; --paper:#fff; --wash:#f5f8fa; --blue:#215b78; --blue2:#153f55; --accent:#b56a3b; }
     * { box-sizing:border-box; }
@@ -22,7 +27,9 @@
     .avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center; border:5px solid rgba(255,255,255,.9); box-shadow:0 12px 35px rgba(0,0,0,.23); background:#d9e3e8; }
     h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.25; }
     h1 { margin:0 0 8px; font-size:3rem; }
-    .role { margin:0 0 18px; font-size:1.18rem; color:#e4eef2; }
+    .role { margin:0 0 5px; font-size:1.18rem; color:#e4eef2; }
+    .affiliation { margin:0 0 10px; color:#e4eef2; font-size:1rem; line-height:1.5; }
+    .hero-focus { margin:0 0 18px; color:#c4e2e8; font-size:.9rem; line-height:1.5; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; }
     .button { display:inline-block; padding:9px 15px; border:1px solid rgba(255,255,255,.72); border-radius:6px; color:white; font-weight:600; font-size:.92rem; }
     .button.primary { color:var(--blue2); background:white; }
@@ -55,6 +62,16 @@
     .entry { position:relative; padding:0 0 23px 24px; border-left:2px solid #cbd8de; }
     .entry:last-child { padding-bottom:0; }
     .entry:before { content:""; position:absolute; width:10px; height:10px; left:-6px; top:7px; border-radius:50%; background:var(--blue); }
+    .research-entries { margin:4px 0 26px 5px; }
+    .research-entries .entry { padding-bottom:16px; }
+    .research-entries .entry:last-child { padding-bottom:0; }
+    .research-entries .entry:nth-child(2):before { background:#087b72; }
+    .research-entries .entry:nth-child(3):before { background:#6f46b8; }
+    .research-entries p { margin:0; line-height:1.65; font-size:.95rem; }
+    .research-entries strong { color:var(--blue2); }
+    .mentor-detail { color:var(--muted); }
+    .focus-summary { margin:17px 0 23px; padding:16px 20px; border-left:3px solid #278878; background:#f2f7f8; border-radius:0 7px 7px 0; font-size:.95rem; }
+    .focus-summary p:last-child { margin-bottom:0; }
     .meta { color:var(--muted); font-size:.92rem; }
     .trajectory-intro { max-width:930px; margin:-2px 0 24px; color:#43515d; font-size:1rem; line-height:1.72; }
     .trajectory-panel { --rp-math:#6f46b8; --rp-model:#087b72; --rp-engineering:#c7661b; --rp-learning:#2267a8; --rp-ai:#bd3f62; overflow:hidden; padding:4px 0 0; }
@@ -87,7 +104,7 @@
     .paper-group { margin-top:28px; }
     .paper-group-title { display:flex; align-items:center; gap:12px; margin:0 0 15px; color:var(--blue2); }
     .paper-group-title:after { content:""; height:1px; flex:1; background:var(--line); }
-    .paper-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
+    .paper-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
     .current-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:current-paper; }
     .current-item { position:relative; padding:15px 18px 15px 58px; border:1px solid var(--line); border-radius:8px; background:#fff; counter-increment:current-paper; transition:border-color .2s,box-shadow .2s; }
     .current-item:before { content:counter(current-paper,decimal-leading-zero); position:absolute; left:17px; top:16px; color:#78909b; font:700 .82rem/1.4 "Avenir Next",Arial,sans-serif; letter-spacing:.04em; }
@@ -95,34 +112,38 @@
     .current-item .paper-title { margin-bottom:6px; }
     .current-item .paper-meta { margin-bottom:5px; }
     .current-item .paper-desc { margin:0; color:#46545e; }
-    .paper { display:grid; grid-template-columns:150px 1fr; min-height:170px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
+    .author-role { color:#40515b; font-weight:700; }
+    .paper { display:flex; flex-direction:column; min-width:0; min-height:100%; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
     .paper:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
-    .paper img { width:100%; height:100%; min-height:170px; object-fit:cover; background:var(--blue2); }
+    .paper img { width:100%; height:170px; min-height:170px; object-fit:cover; background:var(--blue2); }
     .paper img.figure-thumb { object-fit:contain; padding:8px; background:#fff; }
-    .paper-body { padding:15px 16px; }
+    .paper-body { display:flex; flex:1; flex-direction:column; padding:15px 16px; }
     .paper-title { margin:0 0 7px; font:700 1rem/1.36 Georgia,"Times New Roman",serif; }
     .paper-meta { margin:0 0 8px; color:var(--muted); font-size:.82rem; line-height:1.45; }
     .metric { display:inline-block; margin:3px 2px 0 4px; padding:1px 6px; border-radius:4px; color:#18536a; background:#e4f0f3; font-style:normal; font-weight:800; white-space:nowrap; }
     .paper-desc { margin:0 0 10px; font-size:.86rem; line-height:1.5; }
-    .paper-links { display:flex; flex-wrap:wrap; gap:7px; }
+    .paper-links { display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:3px; }
     .paper-links a { padding:3px 8px; border:1px solid #b9ccd4; border-radius:4px; font-size:.78rem; font-weight:700; }
     .compact { margin:5px 0; padding-left:21px; }
     .compact li { margin:5px 0; }
-    .service-grid { display:grid; gap:16px; }
-    .service-card { display:grid; grid-template-columns:170px 1fr; min-height:190px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .service-card { display:flex; flex-direction:column; min-width:0; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
     .service-card:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
-    .service-cover { min-height:190px; position:relative; display:grid; place-items:center; overflow:hidden; background:#eef3f5; }
+    .service-cover { height:220px; min-height:220px; position:relative; display:grid; place-items:center; overflow:hidden; background:#eef3f5; }
     .service-cover > img { width:100%; height:100%; object-fit:contain; padding:8px; }
     .service-cover.scientific-reports > .service-hero { padding:0; object-fit:cover; }
     .service-cover .journal-logo-band { position:absolute; left:10px; right:10px; bottom:12px; padding:10px 12px; border-radius:5px; background:rgba(255,255,255,.93); box-shadow:0 3px 12px rgba(10,40,55,.18); }
     .service-cover .journal-logo-band img { width:100%; height:auto; display:block; }
-    .service-body { padding:20px 22px; }
+    .service-body { display:flex; flex:1; flex-direction:column; padding:18px; }
     .service-title { margin:0 0 8px; font-size:1.18rem; }
     .service-count { margin:0 0 8px; color:var(--blue2); font-weight:700; }
     .service-note { margin:9px 0 12px; color:var(--muted); font-size:.88rem; }
     .service-link { display:inline-block; padding:4px 9px; border:1px solid #b9ccd4; border-radius:4px; font-size:.8rem; font-weight:700; }
     footer { text-align:center; color:var(--muted); padding:0 25px 36px; font-size:.88rem; }
     footer .credit { display:block; margin-top:5px; font-size:.76rem; }
+    @media (max-width:900px) {
+      .paper-grid,.service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
     @media (max-width:720px) {
       .nav-inner { align-items:flex-start; }
       .nav-links { gap:9px 14px; justify-content:flex-end; }
@@ -130,20 +151,16 @@
       .avatar { margin:auto; width:150px; height:150px; }
       .actions,.tags,.socials { justify-content:center; }
       h1 { font-size:2.35rem; }
-      .two-col,.paper-grid { grid-template-columns:1fr; gap:20px; }
-      .paper { grid-template-columns:120px 1fr; }
-      .service-card { grid-template-columns:135px 1fr; }
+      .two-col,.paper-grid,.service-grid { grid-template-columns:1fr; gap:20px; }
       section { padding:25px 22px; }
       .trajectory-panel { padding:8px 0 0; }
       .trajectory-chart { display:none; }
       .trajectory-mobile { display:block; }
     }
     @media (max-width:480px) {
-      .paper { grid-template-columns:1fr; }
       .paper img { height:150px; min-height:0; }
       .current-item { padding:14px 14px 14px 48px; }
       .current-item:before { left:13px; top:15px; }
-      .service-card { grid-template-columns:1fr; }
       .service-cover { height:230px; min-height:0; }
     }
   </style>
@@ -163,7 +180,9 @@
       <img class="avatar" src="work/Dedai-Wei.jpg" alt="Portrait of Dedai Wei">
       <div>
         <h1>Dedai Wei</h1>
-        <p class="role">Second-year Master's Student · University of Macau</p>
+        <p class="role">Research Assistant · University of Macau</p>
+        <p class="affiliation">State Key Laboratory of Internet of Things for Smart City</p>
+        <p class="hero-focus">AI for Science · Structural Health Monitoring · Probabilistic Ground-Motion Modeling</p>
         <p class="contact-line">harrison.will@connect.um.edu.mo</p>
         <div class="socials" aria-label="Profile links">
           <a class="profile-link email" href="mailto:harrison.will@connect.um.edu.mo" title="Email" aria-label="Email"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm10 7L4.8 7h14.4L12 12zm0 2.4L4 8.8V17h16V8.8l-8 5.6z"/></svg></span><span class="profile-label">Email</span></a>
@@ -178,12 +197,18 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>I am a second-year master's student at the University of Macau and an AI for Science researcher developing computational methods for complex scientific and engineering problems. My work combines mathematical modeling, stochastic optimization, and modern deep learning, with particular interests in neural networks, probabilistic diffusion models, scientific machine learning, and large language model agents. I have published nine peer-reviewed papers and am preparing for PhD applications for Fall 2027.</p>
+      <p>I am a <strong>Research Assistant at the University of Macau's State Key Laboratory of Internet of Things for Smart City</strong>, working with <strong>Dr. Sin Chi Kuok</strong> on structural health monitoring and probabilistic ground-motion modeling. My research connects mathematical and statistical foundations with AI for Science, developing reliable learning and generative methods for complex scientific and engineering systems.</p>
+      <p>My work builds on stochastic processes, statistical inference, mathematical modeling, and optimization, with an emphasis on uncertainty, physical constraints, and cross-regional generalization. My publications include work in <em>Pattern Recognition</em>, <em>Neural Networks</em>, <em>Journal of Advanced Research</em>, <em>Results in Engineering</em>, and <em>Biomedical Signal Processing and Control</em>. I am preparing for PhD applications for Fall 2027.</p>
+      <div class="focus-summary">
+        <h3>Current focus</h3>
+        <p>I study text-enhanced dynamic graph diffusion for structural-change discovery (<em>Information Sciences</em>, under review); physics-informed neural operators through <strong>PIC-GO</strong> (<em>AAAI 2027</em>, CCF A, under review); and engineering-constrained scenario generation through <strong>StressGDiff</strong> (<em>Reliability Engineering &amp; System Safety</em>, under review). <strong>EI-HLRD</strong> explores probabilistic ground-motion modeling and cross-regional transfer, while <strong>FADC</strong> and <strong>CausalMB-LLM</strong> investigate natural-language-guided discovery and causal structure learning.</p>
+        <p>My generative-agent study, <a href="https://arxiv.org/abs/2608.15181" target="_blank" rel="noopener">Insurance as AI Risk Infrastructure</a>, was accepted at an AAMAS workshop; its extended version is under review at <em>IEEE Transactions on Artificial Intelligence</em> (CiteScore 6.4). <a href="#publications">See projects, publication details, and venue metrics →</a></p>
+      </div>
       <div class="two-col">
         <div>
           <h3>Research interests</h3>
           <div class="tags">
-            <span class="tag">AI for Science</span><span class="tag">Mathematical Modeling</span><span class="tag">Stochastic Optimization</span><span class="tag">Neural Networks</span><span class="tag">Diffusion Models</span><span class="tag">Scientific Machine Learning</span><span class="tag">LLM Agents</span>
+            <span class="tag">AI for Science</span><span class="tag">Stochastic Modeling</span><span class="tag">Physics-Informed Neural Operators</span><span class="tag">Graph Diffusion</span><span class="tag">Engineering-Constrained Generation</span><span class="tag">LLM Agents</span>
           </div>
         </div>
         <div>
@@ -197,8 +222,14 @@
     </section>
 
     <section id="experience">
-      <h2>Research Trajectory</h2>
-      <p class="trajectory-intro">My research is grounded in mathematics and statistics. Since 2024, I have progressed from stochastic processes, analytical derivation, mathematical modeling, and optimization to scientific prediction and modern learning systems. My current work integrates graph diffusion, generative models, reinforcement learning, large language models, and autonomous agents to build reliable AI systems for complex scientific and engineering problems.</p>
+      <h2>Research Experience</h2>
+      <div class="research-entries">
+        <div class="entry"><p><strong>Present · University of Macau · Research Assistant.</strong> At the State Key Laboratory of Internet of Things for Smart City, I work with <a href="https://www.um.edu.mo/zh-hant/news-and-press-releases/campus-news/detail/64015/" target="_blank" rel="noopener">Assistant Professor Sin Chi Kuok</a> <span class="mentor-detail">(former UM Macao Fellow; visiting scholar at Oxford and Cambridge)</span> on structural health monitoring, probabilistic ground-motion modeling, and cross-regional generalization.</p></div>
+        <div class="entry"><p><strong>2025–2026 · University of Macau · Stochastic Processes &amp; Statistical Modeling.</strong> With Associate Professor Yang Zu <span class="mentor-detail">(PhD in Econometrics, University of Amsterdam / Tinbergen Institute)</span>, I study stochastic processes, time-series and volatility modeling, statistical inference, and mathematical analysis.</p></div>
+        <div class="entry"><p><strong>2024 · Deep Learning &amp; Engineering Optimization.</strong> With <a href="https://ai.wzu.edu.cn/chenhuiling2023-3.pdf" target="_blank" rel="noopener">Professor Huiling Chen</a> <span class="mentor-detail">(doctoral supervisor at Wenzhou University; Young Top-Notch Talent, National “Ten Thousand Talents Program”)</span>, I worked on deep learning, mathematical modeling, optimization algorithms, and numerical validation for engineering problems.</p></div>
+      </div>
+      <h3>Methodological trajectory</h3>
+      <p class="trajectory-intro">Since 2024, I have developed an interconnected research foundation in mathematical modeling, optimization, simulation, and deep learning, extending toward physics-informed learning, graph diffusion, and LLM-based scientific analysis. The diagram highlights this evolving emphasis; the methods overlap and continue to inform one another.</p>
       <div class="trajectory-panel">
         <svg class="trajectory-chart" viewBox="0 0 1060 625" role="img" aria-labelledby="trajectory-title trajectory-desc">
           <title id="trajectory-title">Research trajectory from mathematical foundations to autonomous AI systems</title>
@@ -293,13 +324,13 @@
       <p>Active submissions and ongoing projects are presented first, followed by nine peer-reviewed publications indexed on Google Scholar.</p>
 
       <div class="paper-group"><h3 class="paper-group-title">Current Research</h3><ol class="current-list">
-        <li class="current-item"><h3 class="paper-title">PIC-GO: Core-First Residual Routing for Runtime-Hidden Physical Regime</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">AAAI 2027</span> <span class="status">Under review</span> <span class="metric">CCF A</span></p><p class="paper-desc">A physics-informed neural operator with frozen-core fallback and selective gated residual correction.</p></li>
-        <li class="current-item"><h3 class="paper-title">StressGDiff: Risk-Guided Heterogeneous Graph Diffusion for Stress-Scenario Discovery in Renewable-Rich Power Systems</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Reliability Engineering &amp; System Safety</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 13.7</span></p><p class="paper-desc">Risk-guided graph diffusion for rare but credible load, renewable, and price stress trajectories.</p></li>
-        <li class="current-item"><h3 class="paper-title">Text-Enhanced Dynamic Multi-View Graph Diffusion Networks with LLM-Based Validation for Financial Structural Breakpoint Detection</h3><p class="paper-meta"><strong>Wei, D.</strong>, et al. · <span class="venue">Information Sciences</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 6.8</span></p><p class="paper-desc">Dynamic graph diffusion, multimodal signals, and LLM validation for structural-change discovery.</p></li>
-        <li class="current-item"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p></li>
-        <li class="current-item"><h3 class="paper-title">EI-HLRD: Engineering-Informed Hierarchical Latent Residual Diffusion for Probabilistic NGA-Sub Ground-Motion Modeling and Cross-Regional Transfer</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Engineering-informed latent diffusion for calibrated ground-motion synthesis and cross-regional scientific transfer.</p></li>
-        <li class="current-item"><h3 class="paper-title">FADC: LLM-Compiled Control Specifications for Intent-Aligned Subgroup Discovery</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Compiling natural-language research intent into validated typed controls for efficient and controllable subgroup discovery.</p></li>
-        <li class="current-item"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Wei, D.</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p></li>
+        <li class="current-item"><h3 class="paper-title">Text-Enhanced Dynamic Multi-View Graph Diffusion Networks with LLM-Based Validation for Financial Structural Breakpoint Detection</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">First author</span> · <span class="venue">Information Sciences</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 6.8</span></p><p class="paper-desc">Dynamic graph diffusion, multimodal signals, and LLM validation for structural-change discovery.</p></li>
+        <li class="current-item"><h3 class="paper-title">PIC-GO: Core-First Residual Routing for Runtime-Hidden Physical Regime</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">Second author</span> · <span class="venue">AAAI 2027</span> <span class="status">Under review</span> <span class="metric">CCF A</span></p><p class="paper-desc">A physics-informed neural operator with frozen-core fallback and selective gated residual correction.</p></li>
+        <li class="current-item"><h3 class="paper-title">StressGDiff: Risk-Guided Heterogeneous Graph Diffusion for Stress-Scenario Discovery in Renewable-Rich Power Systems</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">Second &amp; corresponding author</span> · <span class="venue">Reliability Engineering &amp; System Safety</span>, 2026 <span class="status">Under review</span> <span class="metric">JCR Q1 · IF 13.7</span></p><p class="paper-desc">Risk-guided graph diffusion for rare but credible load, renewable, and price stress trajectories.</p></li>
+        <li class="current-item"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">First author</span> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p></li>
+        <li class="current-item"><h3 class="paper-title">EI-HLRD: Engineering-Informed Hierarchical Latent Residual Diffusion for Probabilistic NGA-Sub Ground-Motion Modeling and Cross-Regional Transfer</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">First author</span> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Engineering-informed latent diffusion for calibrated ground-motion synthesis and cross-regional scientific transfer.</p></li>
+        <li class="current-item"><h3 class="paper-title">FADC: LLM-Compiled Control Specifications for Intent-Aligned Subgroup Discovery</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">First author</span> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Compiling natural-language research intent into validated typed controls for efficient and controllable subgroup discovery.</p></li>
+        <li class="current-item"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Wei, D.</strong> · <span class="author-role">First author</span> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p></li>
       </ol></div>
 
       <div class="paper-group"><h3 class="paper-group-title">Publications</h3><div class="paper-grid">
@@ -356,6 +387,6 @@
     </section>
 
   </main>
-  <footer>© 2026 Dedai Wei · Last updated September 2026 <span class="credit">Campus photo: <a href="https://commons.wikimedia.org/wiki/File:University_of_Macau_in_Hengqin（west）2021.jpg" target="_blank" rel="noopener">Charlie Fong / Wikimedia Commons</a>, CC BY-SA 4.0</span></footer>
+  <footer>© 2026 Dedai Wei · Last updated 29 September 2026 <span class="credit">Campus photo: <a href="https://commons.wikimedia.org/wiki/File:University_of_Macau_in_Hengqin（west）2021.jpg" target="_blank" rel="noopener">Charlie Fong / Wikimedia Commons</a>, CC BY-SA 4.0</span></footer>
 </body>
 </html>
