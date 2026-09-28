@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dedai Wei, Research Assistant at the University of Macau's State Key Laboratory of Internet of Things for Smart City. AI for Science, structural health monitoring, and probabilistic ground-motion modeling; publications in Pattern Recognition, Neural Networks, and Journal of Advanced Research. Current projects include PIC-GO, StressGDiff, EI-HLRD, and LLM agents.">
-  <meta name="keywords" content="Dedai Wei, University of Macau, AI for Science, structural health monitoring, probabilistic ground-motion modeling, stochastic optimization, neural operators, graph diffusion, LLM agents">
+  <meta name="description" content="Dedai Wei, Research Assistant at the University of Macau's State Key Laboratory of Internet of Things for Smart City. Mathematical modeling, machine learning, and scientific computing; publications in Pattern Recognition, Neural Networks, and Journal of Advanced Research. Current projects include PIC-GO, StressGDiff, EI-HLRD, and LLM agents.">
+  <meta name="keywords" content="Dedai Wei, University of Macau, mathematical modeling, machine learning, scientific computing, stochastic optimization, neural operators, graph diffusion, LLM agents">
   <link rel="canonical" href="https://dedai-wei.github.io/">
   <meta property="og:title" content="Dedai Wei | AI for Science · University of Macau">
   <meta property="og:description" content="Research Assistant at the University of Macau. Mathematical and statistical foundations for scientific machine learning, engineering reliability, and intelligent systems.">
@@ -20,24 +20,29 @@
     a:hover { color:var(--accent); }
     .nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
     .nav-inner { max-width:1080px; margin:auto; padding:13px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { font-family:Georgia,serif; font-weight:700; color:var(--ink); letter-spacing:.02em; }
+    .brand { font-family:Georgia,serif; font-weight:400; color:var(--ink); letter-spacing:.02em; }
     .nav-links { display:flex; flex-wrap:wrap; gap:18px; font-size:.92rem; }
-    .hero { color:white; background:linear-gradient(100deg,rgba(8,35,50,.94) 0%,rgba(15,57,75,.82) 53%,rgba(15,57,75,.48) 100%),url("work/um-campus.jpg") center 48%/cover no-repeat; }
+    .hero { color:white; background:linear-gradient(100deg,rgba(8,30,46,.90) 0%,rgba(12,42,60,.82) 63%,rgba(15,48,65,.42) 100%),url("work/um-skl-iotsc-lab.jpg") center center/cover no-repeat; }
     .hero-inner { max-width:1080px; margin:auto; padding:68px 28px 62px; display:grid; grid-template-columns:180px 1fr; gap:42px; align-items:center; }
     .avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center; border:5px solid rgba(255,255,255,.9); box-shadow:0 12px 35px rgba(0,0,0,.23); background:#d9e3e8; }
-    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.25; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; line-height:1.25; }
+    strong,b { font-weight:400; }
     h1 { margin:0 0 8px; font-size:3rem; }
     .role { margin:0 0 5px; font-size:1.18rem; color:#e4eef2; }
     .affiliation { margin:0 0 10px; color:#e4eef2; font-size:1rem; line-height:1.5; }
+    .affiliation a { color:inherit; text-decoration:underline; text-decoration-color:rgba(228,238,242,.5); text-underline-offset:4px; }
+    .affiliation a:hover { color:#fff; text-decoration-color:#fff; }
+    main p a { text-decoration:underline; text-decoration-color:#acc3ce; text-underline-offset:3px; }
+    main p a:hover { text-decoration-color:currentColor; }
     .hero-focus { margin:0 0 18px; color:#c4e2e8; font-size:.9rem; line-height:1.5; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; }
-    .button { display:inline-block; padding:9px 15px; border:1px solid rgba(255,255,255,.72); border-radius:6px; color:white; font-weight:600; font-size:.92rem; }
+    .button { display:inline-block; padding:9px 15px; border:1px solid rgba(255,255,255,.72); border-radius:6px; color:white; font-weight:400; font-size:.92rem; }
     .button.primary { color:var(--blue2); background:white; }
     .button:hover { color:white; border-color:white; background:rgba(255,255,255,.12); }
     .button.primary:hover { color:var(--blue2); background:#edf4f6; }
     .contact-line { margin:0 0 18px; color:#e8f1f4; font-size:1rem; }
     .socials { display:flex; flex-wrap:wrap; gap:16px; }
-    .profile-link { --profile-color:#3d7fa8; width:66px; display:flex; flex-direction:column; align-items:center; gap:6px; color:#fff; font-size:.78rem; font-weight:700; letter-spacing:.02em; }
+    .profile-link { --profile-color:#3d7fa8; width:66px; display:flex; flex-direction:column; align-items:center; gap:6px; color:#fff; font-size:.78rem; font-weight:400; letter-spacing:.02em; }
     .profile-link:hover { color:#fff; }
     .profile-icon { width:56px; height:56px; display:grid; place-items:center; color:#fff; border:2px solid rgba(255,255,255,.78); border-radius:50%; background:var(--profile-color); box-shadow:0 6px 16px rgba(0,0,0,.18); transition:transform .2s,box-shadow .2s; }
     .profile-link:hover .profile-icon { transform:translateY(-3px) scale(1.04); box-shadow:0 9px 20px rgba(0,0,0,.23); }
@@ -46,7 +51,7 @@
     .profile-link.scholar { --profile-color:#3477b9; }
     .profile-link.cv { --profile-color:#168574; }
     .profile-link.entj { --profile-color:#8754a8; }
-    .profile-icon.text-icon { font-size:.73rem; font-weight:900; letter-spacing:.05em; }
+    .profile-icon.text-icon { font-size:.73rem; font-weight:400; letter-spacing:.05em; }
     .profile-label { line-height:1.15; text-align:center; text-shadow:0 1px 2px rgba(0,0,0,.25); }
     main { max-width:1080px; margin:0 auto; padding:34px 28px 70px; }
     section { scroll-margin-top:70px; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:30px 34px; margin:22px 0; box-shadow:0 5px 18px rgba(30,50,65,.045); }
@@ -85,10 +90,10 @@
     .trajectory-chart .rp-stream { stroke-width:3; stroke-linecap:round; opacity:.22; }
     .trajectory-chart .rp-ray { fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
     .trajectory-chart .rp-symbol { stroke:#fff; stroke-width:4; paint-order:stroke fill; filter:drop-shadow(0 2px 3px rgba(25,45,55,.14)); }
-    .trajectory-chart .rp-stage { font-family:"Avenir Next Rounded","Trebuchet MS","Arial Rounded MT Bold",sans-serif; font-size:19px; font-weight:700; letter-spacing:.1px; }
-    .trajectory-chart .rp-detail { fill:#34434e; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:16px; font-weight:600; }
-    .trajectory-chart .rp-axis-label { fill:#52616c; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:15px; font-weight:600; }
-    .trajectory-chart .rp-time { fill:#324651; font-family:"Avenir Next Rounded","Trebuchet MS",sans-serif; font-size:16px; font-weight:700; }
+    .trajectory-chart .rp-stage { font-family:"Avenir Next Rounded","Trebuchet MS",sans-serif; font-size:19px; font-weight:400; letter-spacing:.1px; }
+    .trajectory-chart .rp-detail { fill:#34434e; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:16px; font-weight:400; }
+    .trajectory-chart .rp-axis-label { fill:#52616c; font-family:"Avenir Next","Trebuchet MS",sans-serif; font-size:15px; font-weight:400; }
+    .trajectory-chart .rp-time { fill:#324651; font-family:"Avenir Next Rounded","Trebuchet MS",sans-serif; font-size:16px; font-weight:400; }
     .trajectory-chart .rp-stage-group { transition:opacity .2s ease; }
     .trajectory-chart:has(.rp-stage-group:hover) .rp-stage-group:not(:hover) { opacity:.52; }
     .trajectory-mobile { display:none; }
@@ -97,33 +102,33 @@
     .trajectory-mobile li { position:relative; padding:0 0 24px 10px; }
     .trajectory-mobile li:last-child { padding-bottom:5px; }
     .trajectory-mobile .rp-mobile-symbol { position:absolute; left:-42px; top:1px; width:30px; height:30px; filter:drop-shadow(0 2px 3px rgba(25,45,55,.16)); }
-    .trajectory-mobile strong { display:block; margin-bottom:3px; color:var(--rp-color); font:700 1.02rem/1.35 "Avenir Next Rounded","Trebuchet MS","Arial Rounded MT Bold",sans-serif; }
+    .trajectory-mobile strong { display:block; margin-bottom:3px; color:var(--rp-color); font:400 1.02rem/1.35 "Avenir Next Rounded","Trebuchet MS",sans-serif; }
     .trajectory-mobile span { display:block; color:#3e4d58; font-size:.92rem; line-height:1.55; }
     .venue { font-style:italic; color:var(--muted); }
-    .status { display:inline-block; margin-left:5px; padding:1px 7px; border-radius:4px; background:#eef3f5; color:var(--blue2); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+    .status { display:inline-block; margin-left:5px; padding:1px 7px; border-radius:4px; background:#eef3f5; color:var(--blue2); font-size:.78rem; font-weight:400; text-transform:uppercase; letter-spacing:.03em; }
     .paper-group { margin-top:28px; }
     .paper-group-title { display:flex; align-items:center; gap:12px; margin:0 0 15px; color:var(--blue2); }
     .paper-group-title:after { content:""; height:1px; flex:1; background:var(--line); }
     .paper-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
     .current-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:current-paper; }
     .current-item { position:relative; padding:15px 18px 15px 58px; border:1px solid var(--line); border-radius:8px; background:#fff; counter-increment:current-paper; transition:border-color .2s,box-shadow .2s; }
-    .current-item:before { content:counter(current-paper,decimal-leading-zero); position:absolute; left:17px; top:16px; color:#78909b; font:700 .82rem/1.4 "Avenir Next",Arial,sans-serif; letter-spacing:.04em; }
+    .current-item:before { content:counter(current-paper,decimal-leading-zero); position:absolute; left:17px; top:16px; color:#78909b; font:400 .82rem/1.4 "Avenir Next",Arial,sans-serif; letter-spacing:.04em; }
     .current-item:hover { border-color:#b8cbd4; box-shadow:0 5px 16px rgba(25,55,70,.07); }
     .current-item .paper-title { margin-bottom:6px; }
     .current-item .paper-meta { margin-bottom:5px; }
     .current-item .paper-desc { margin:0; color:#46545e; }
-    .author-role { color:#40515b; font-weight:700; }
+    .author-role { color:#40515b; font-weight:400; }
     .paper { display:flex; flex-direction:column; min-width:0; min-height:100%; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s,box-shadow .2s; }
     .paper:hover { transform:translateY(-2px); box-shadow:0 9px 24px rgba(25,55,70,.1); }
     .paper img { width:100%; height:170px; min-height:170px; object-fit:cover; background:var(--blue2); }
     .paper img.figure-thumb { object-fit:contain; padding:8px; background:#fff; }
     .paper-body { display:flex; flex:1; flex-direction:column; padding:15px 16px; }
-    .paper-title { margin:0 0 7px; font:700 1rem/1.36 Georgia,"Times New Roman",serif; }
+    .paper-title { margin:0 0 7px; font:400 1rem/1.36 Georgia,"Times New Roman",serif; }
     .paper-meta { margin:0 0 8px; color:var(--muted); font-size:.82rem; line-height:1.45; }
-    .metric { display:inline-block; margin:3px 2px 0 4px; padding:1px 6px; border-radius:4px; color:#18536a; background:#e4f0f3; font-style:normal; font-weight:800; white-space:nowrap; }
+    .metric { display:inline-block; margin:3px 2px 0 4px; padding:1px 6px; border-radius:4px; color:#18536a; background:#e4f0f3; font-style:normal; font-weight:400; white-space:nowrap; }
     .paper-desc { margin:0 0 10px; font-size:.86rem; line-height:1.5; }
     .paper-links { display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:3px; }
-    .paper-links a { padding:3px 8px; border:1px solid #b9ccd4; border-radius:4px; font-size:.78rem; font-weight:700; }
+    .paper-links a { padding:3px 8px; border:1px solid #b9ccd4; border-radius:4px; font-size:.78rem; font-weight:400; }
     .compact { margin:5px 0; padding-left:21px; }
     .compact li { margin:5px 0; }
     .service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
@@ -136,9 +141,9 @@
     .service-cover .journal-logo-band img { width:100%; height:auto; display:block; }
     .service-body { display:flex; flex:1; flex-direction:column; padding:18px; }
     .service-title { margin:0 0 8px; font-size:1.18rem; }
-    .service-count { margin:0 0 8px; color:var(--blue2); font-weight:700; }
+    .service-count { margin:0 0 8px; color:var(--blue2); font-weight:400; }
     .service-note { margin:9px 0 12px; color:var(--muted); font-size:.88rem; }
-    .service-link { display:inline-block; padding:4px 9px; border:1px solid #b9ccd4; border-radius:4px; font-size:.8rem; font-weight:700; }
+    .service-link { display:inline-block; padding:4px 9px; border:1px solid #b9ccd4; border-radius:4px; font-size:.8rem; font-weight:400; }
     footer { text-align:center; color:var(--muted); padding:0 25px 36px; font-size:.88rem; }
     footer .credit { display:block; margin-top:5px; font-size:.76rem; }
     @media (max-width:900px) {
@@ -181,7 +186,7 @@
       <div>
         <h1>Dedai Wei</h1>
         <p class="role">Research Assistant · University of Macau</p>
-        <p class="affiliation">State Key Laboratory of Internet of Things for Smart City</p>
+        <p class="affiliation"><a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener">State Key Laboratory of Internet of Things for Smart City</a></p>
         <p class="hero-focus">Mathematical Modeling · Machine Learning · Scientific Computing</p>
         <p class="contact-line">harrison.will@connect.um.edu.mo</p>
         <div class="socials" aria-label="Profile links">
@@ -197,8 +202,7 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>I am a <strong>Research Assistant at the University of Macau's State Key Laboratory of Internet of Things for Smart City</strong>, working with <strong>Dr. Sin Chi Kuok</strong> on structural health monitoring and probabilistic ground-motion modeling. My research connects mathematical and statistical foundations with AI for Science, developing reliable learning and generative methods for complex scientific and engineering systems.</p>
-      <p>My work builds on stochastic processes, statistical inference, mathematical modeling, and optimization, with an emphasis on uncertainty, physical constraints, and cross-regional generalization. My publications include work in <em>Pattern Recognition</em>, <em>Neural Networks</em>, <em>Journal of Advanced Research</em>, <em>Results in Engineering</em>, and <em>Biomedical Signal Processing and Control</em>. I am preparing for PhD applications for Fall 2027.</p>
+      <p>I am a Research Assistant at the University of Macau's <a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener">State Key Laboratory of Internet of Things for Smart City</a>, working with Dr. <a href="https://feg.um.edu.mo/people/sckuok/" target="_blank" rel="noopener">Sin Chi Kuok</a>. My research integrates stochastic processes, statistical inference, mathematical modeling, and optimization with machine learning to develop reliable computational and generative methods for scientific and engineering problems, with a focus on uncertainty quantification, physical constraints, and generalization. My work has appeared in <em>Pattern Recognition</em>, <em>Neural Networks</em>, <em>Journal of Advanced Research</em>, <em>Results in Engineering</em>, and <em>Biomedical Signal Processing and Control</em>. I am preparing for PhD applications for Fall 2027.</p>
       <div class="focus-summary">
         <h3>Current focus</h3>
         <p>I study text-enhanced dynamic graph diffusion for structural-change discovery (<em>Information Sciences</em>, under review); physics-informed neural operators through <strong>PIC-GO</strong> (<em>AAAI 2027</em>, CCF A, under review); and engineering-constrained scenario generation through <strong>StressGDiff</strong> (<em>Reliability Engineering &amp; System Safety</em>, under review). <strong>EI-HLRD</strong> explores probabilistic ground-motion modeling and cross-regional transfer, while <strong>FADC</strong> and <strong>CausalMB-LLM</strong> investigate natural-language-guided discovery and causal structure learning.</p>
@@ -224,9 +228,9 @@
     <section id="experience">
       <h2>Research Experience</h2>
       <div class="research-entries">
-        <div class="entry"><p><strong>Present · University of Macau · Research Assistant.</strong> At the State Key Laboratory of Internet of Things for Smart City, I work with <a href="https://www.um.edu.mo/zh-hant/news-and-press-releases/campus-news/detail/64015/" target="_blank" rel="noopener">Assistant Professor Sin Chi Kuok</a> <span class="mentor-detail">(former UM Macao Fellow; visiting scholar at Oxford and Cambridge)</span> on structural health monitoring, probabilistic ground-motion modeling, and cross-regional generalization.</p></div>
-        <div class="entry"><p><strong>2025–2026 · University of Macau · Stochastic Processes &amp; Statistical Modeling.</strong> With Associate Professor Yang Zu <span class="mentor-detail">(PhD in Econometrics, University of Amsterdam / Tinbergen Institute)</span>, I study stochastic processes, time-series and volatility modeling, statistical inference, and mathematical analysis.</p></div>
-        <div class="entry"><p><strong>2024 · Deep Learning &amp; Engineering Optimization.</strong> With <a href="https://ai.wzu.edu.cn/chenhuiling2023-3.pdf" target="_blank" rel="noopener">Professor Huiling Chen</a> <span class="mentor-detail">(doctoral supervisor at Wenzhou University; Young Top-Notch Talent, National “Ten Thousand Talents Program”)</span>, I worked on deep learning, mathematical modeling, optimization algorithms, and numerical validation for engineering problems.</p></div>
+        <div class="entry"><p><strong>Present · University of Macau · Research Assistant.</strong> At the <a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener">State Key Laboratory of Internet of Things for Smart City</a>, I work with Assistant Professor <a href="https://feg.um.edu.mo/people/sckuok/" target="_blank" rel="noopener">Sin Chi Kuok</a> <span class="mentor-detail">(former UM Macao Fellow; visiting scholar at Oxford and Cambridge)</span> on probabilistic ground-motion modeling, uncertainty quantification, and cross-regional generalization.</p></div>
+        <div class="entry"><p><strong>2025–2026 · University of Macau · Stochastic Processes &amp; Statistical Modeling.</strong> With Associate Professor <a href="https://econ.fss.um.edu.mo/avada_portfolio/yang-zu/" target="_blank" rel="noopener">Yang Zu</a> <span class="mentor-detail">(PhD in Econometrics, University of Amsterdam / Tinbergen Institute)</span>, I study stochastic processes, time-series and volatility modeling, statistical inference, and mathematical analysis.</p></div>
+        <div class="entry"><p><strong>2024 · Deep Learning &amp; Engineering Optimization.</strong> With Professor <a href="https://ai.wzu.edu.cn/chenhuiling2023-3.pdf" target="_blank" rel="noopener" title="Official Wenzhou University faculty profile (PDF)">Huiling Chen</a> <span class="mentor-detail">(doctoral supervisor at Wenzhou University; Young Top-Notch Talent, National “Ten Thousand Talents Program”)</span>, I worked on deep learning, mathematical modeling, optimization algorithms, and numerical validation for engineering problems.</p></div>
       </div>
       <h3>Methodological trajectory</h3>
       <p class="trajectory-intro">Since 2024, I have developed an interconnected research foundation in mathematical modeling, optimization, simulation, and deep learning, extending toward physics-informed learning, graph diffusion, and LLM-based scientific analysis. The diagram highlights this evolving emphasis; the methods overlap and continue to inform one another.</p>
@@ -387,6 +391,6 @@
     </section>
 
   </main>
-  <footer>© 2026 Dedai Wei · Last updated 29 September 2026 <span class="credit">Campus photo: <a href="https://commons.wikimedia.org/wiki/File:University_of_Macau_in_Hengqin（west）2021.jpg" target="_blank" rel="noopener">Charlie Fong / Wikimedia Commons</a>, CC BY-SA 4.0</span></footer>
+  <footer>© 2026 Dedai Wei · Last updated 29 September 2026 <span class="credit">Laboratory background photo: <a href="https://www.um.edu.mo/news-and-press-releases/press-release/detail/64245/" target="_blank" rel="noopener">University of Macau</a> · Intelligent transportation research facility (cropped)</span></footer>
 </body>
 </html>
