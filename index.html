@@ -94,8 +94,9 @@
     .about-intro { max-width:890px; margin:0 0 22px; color:#42535f; }
     .about-explorer { --about-violet:var(--violet); --about-teal:var(--teal); --about-copper:var(--amber); }
     .about-explorer [hidden] { display:none !important; }
-    .about-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; padding:5px; margin-bottom:19px; background:linear-gradient(100deg,#f2eef9,#edf5f5 55%,#fbf2e9); border:1px solid #e3e2eb; border-radius:10px; }
+    .about-tabs { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; padding:5px; margin-bottom:19px; background:linear-gradient(100deg,#f2eef9,#edf5f5 55%,#fbf2e9); border:1px solid #e3e2eb; border-radius:10px; }
     .about-tab { --tab-accent:var(--violet); --tab-tint:#ece3fa; --tab-border:#c9b6e4; display:flex; align-items:center; justify-content:center; gap:9px; flex:1; min-height:44px; padding:10px 12px; border:1px solid transparent; border-radius:7px; color:var(--tab-accent); background:transparent; font:inherit; font-size:.9rem; font-weight:400; line-height:1.3; cursor:pointer; transition:color .18s,background .18s,border-color .18s; }
+    #about-tab-experience { --tab-accent:var(--blue); --tab-tint:#e6effc; --tab-border:#b2c9e8; }
     #about-tab-trajectory { --tab-accent:var(--rose); --tab-tint:#fae7ef; --tab-border:#e5b9cb; }
     #about-tab-projects { --tab-accent:var(--teal); --tab-tint:#dff2ec; --tab-border:#a6d5c9; }
     #about-tab-venues { --tab-accent:var(--amber); --tab-tint:#fbead6; --tab-border:#e4c3a2; }
@@ -107,7 +108,9 @@
     .about-panel + .about-panel { margin-top:26px; }
     .about-explorer.is-interactive .about-panel { margin-top:0; animation:about-reveal .2s ease; }
     .about-explorer.is-interactive .about-panel-heading { display:none; }
-    .about-explorer.is-interactive #trajectory .about-panel-heading { display:block; margin:3px 0 20px; color:var(--blue2); font-size:1.25rem; }
+    .about-explorer.is-interactive #experience .about-panel-heading,.about-explorer.is-interactive #trajectory .about-panel-heading { display:block; margin:3px 0 20px; color:var(--blue2); font-size:1.25rem; }
+    .research-appointment { margin:0; padding:16px 20px; border-left:3px solid var(--blue); border-radius:0 8px 8px 0; background:linear-gradient(110deg,#edf4fc,#fff); color:#42535f; }
+    .appointment-role { color:var(--blue2); }
     .about-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
     .about-card { --card-accent:var(--blue); --card-tint:#edf4fc; --card-border:#cedeed; min-width:0; padding:17px 18px; border:1px solid var(--card-border); border-radius:9px; background:linear-gradient(150deg,var(--card-tint),#fff 95%); box-shadow:inset 0 3px 0 var(--card-accent); }
     .about-card.math,.about-project:nth-child(1) { --card-accent:var(--about-violet); --card-tint:#f1e9fb; --card-border:#dfd0ef; }
@@ -241,8 +244,9 @@
       .trajectory-chart { display:none; }
       .trajectory-mobile { display:block; }
       .about-grid { grid-template-columns:1fr; gap:10px; }
-      .about-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
-      .about-tab { min-width:0; }
+      .about-tabs { grid-template-columns:repeat(6,minmax(0,1fr)); }
+      .about-tab { grid-column:span 2; min-width:0; }
+      .about-tab:nth-last-child(-n+2) { grid-column:span 3; }
       .about-card:not(.about-project) { display:grid; grid-template-columns:65px minmax(0,1fr); column-gap:12px; padding:15px; }
       .about-card:not(.about-project) h4 { align-self:center; margin:0; font-size:1rem; }
       .about-card:not(.about-project) p { grid-column:1 / -1; margin-top:8px; }
@@ -309,6 +313,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V5m0 13h18M5 15c5 0 3-10 7-10s2 10 8 10"/></svg>
             <span>Foundations</span>
           </button>
+          <button class="about-tab" type="button" id="about-tab-experience" aria-controls="experience">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12l9 3 9-3m-9 1v4"/></svg>
+            <span>Experience</span>
+          </button>
           <button class="about-tab" type="button" id="about-tab-trajectory" aria-controls="trajectory">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4v17h18M6 16l5-5 4 2 6-8m-6 0h6v6"/></svg>
             <span>Trajectory</span>
@@ -357,6 +365,10 @@
             </div>
           </div>
           <p class="about-panel-foot"><span>Uncertainty · Physical constraints · Generalization</span><a href="#trajectory">Explore my research trajectory →</a></p>
+        </div>
+        <div class="about-panel" id="experience" aria-labelledby="experience-heading">
+          <h3 class="about-panel-heading" id="experience-heading">Research experience</h3>
+          <p class="research-appointment"><span class="appointment-role">Present · Research Assistant.</span> At the <a href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener">State Key Laboratory of Internet of Things for Smart City, University of Macau</a>, my work focuses on probabilistic ground-motion modeling, uncertainty quantification, and cross-regional generalization.</p>
         </div>
         <div class="about-panel" id="trajectory" aria-labelledby="trajectory-heading">
           <h3 class="about-panel-heading" id="trajectory-heading">Research trajectory</h3>
