@@ -80,14 +80,13 @@
     .profile-icon svg { width:27px; height:27px; fill:currentColor; }
     .profile-link.email { --profile-color:#d95d54; }
     .profile-link.scholar { --profile-color:#3477b9; }
-    .profile-link.preprint { --profile-color:#aa4856; }
+    .profile-link.fitness { --profile-color:#aa4856; }
     .profile-link.papers { --profile-color:#a96b28; }
     .profile-link.projects { --profile-color:#21786d; }
     .profile-link.lab { --profile-color:#247f99; }
     .profile-link.cv { --profile-color:#168574; }
     .profile-link.entj { --profile-color:#8754a8; }
     .profile-icon.text-icon { font-size:.73rem; font-weight:400; letter-spacing:.05em; }
-    .profile-icon.arxiv-icon { font-family:Georgia,serif; font-size:1rem; letter-spacing:-.035em; }
     .profile-icon svg.line-icon { fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
     .profile-link:focus-visible { outline:2px solid #fff; outline-offset:6px; border-radius:6px; }
     .profile-label { line-height:1.15; text-align:center; text-shadow:0 1px 2px rgba(0,0,0,.25); }
@@ -164,7 +163,7 @@
     .about-venue-name { display:block; color:var(--blue2); font:400 1.02rem/1.35 Georgia,"Times New Roman",serif; }
     .about-venue-topic { display:block; color:#5e6975; font-size:.8rem; margin-top:5px; }
     .about-venue-doi { display:block; margin-top:8px; color:var(--blue); font-size:.76rem; }
-    .about-personal { margin-top:21px; padding-top:15px; border-top:1px solid #ecdac9; }
+    .about-personal { scroll-margin-top:90px; margin-top:21px; padding-top:15px; border-top:1px solid #ecdac9; }
     .about-personal summary { display:flex; align-items:center; flex-wrap:wrap; gap:6px 14px; min-height:44px; color:#955631; font-size:.87rem; cursor:pointer; list-style:none; }
     .about-personal summary::-webkit-details-marker { display:none; }
     .about-personal summary:after { content:"+"; margin-left:auto; color:var(--blue); font-size:1.25rem; }
@@ -317,7 +316,7 @@
         <ul class="hero-topics" aria-label="Research interests"><li>Graph Learning</li><li>Probabilistic Modeling</li><li>Neural Operators</li><li>LLM Agents</li></ul>
         <div class="socials" aria-label="Profile links">
           <a class="profile-link scholar" href="https://scholar.google.com/citations?hl=en&amp;user=A74U1lYAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2zm0 11.63L4.72 9 12 4.37 19.28 9 12 13.63zM6 14.2V18c2.8 3 9.2 3 12 0v-3.8l-6 3.8-6-3.8z"/></svg></span><span class="profile-label">Scholar</span></a>
-          <a class="profile-link preprint" href="https://arxiv.org/abs/2608.15181" target="_blank" rel="noopener" title="AI-agent study on arXiv" aria-label="AI-agent preprint on arXiv"><span class="profile-icon arxiv-icon" aria-hidden="true">arXiv</span><span class="profile-label">Preprint</span></a>
+          <a class="profile-link fitness" href="#fitness-credentials" title="National professional fitness coach certification" aria-label="Fitness Coach — national professional certification"><span class="profile-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24"><path d="M8 12h8M3 10v4m18-4v4"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/></svg></span><span class="profile-label">Fitness Coach</span></a>
           <a class="profile-link papers" href="#publications" title="Research publications" aria-label="Research publications"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3V4m9 2v15M6 8h3m6 0h3M6 12h3m6 0h3"/></svg></span><span class="profile-label">Papers</span></a>
           <a class="profile-link projects" href="#about-projects" title="Current research projects" aria-label="Current research projects"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 2-7 11L6 6"/><circle cx="6" cy="6" r="2.5" fill="currentColor"/><circle cx="18" cy="8" r="2.5" fill="currentColor"/><circle cx="11" cy="19" r="2.5" fill="currentColor"/></svg></span><span class="profile-label">Projects</span></a>
           <a class="profile-link lab" href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener" title="State Key Laboratory of IoT for Smart City" aria-label="State Key Laboratory official website"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 21v-5h6v5M8 12h1m6 0h1"/></svg></span><span class="profile-label">Lab</span></a>
@@ -541,10 +540,10 @@
           <p class="about-panel-foot"><span>Also: Results in Engineering · Biomedical Signal Processing and Control</span><a href="#publications">View the full publication list →</a></p>
         </div>
       </div>
-      <details class="about-personal">
-        <summary><span>Beyond research</span><span class="personal-hint">Strength training · Basketball · Swimming</span></summary>
+      <details class="about-personal" id="fitness-credentials">
+        <summary><span>Beyond research · Fitness &amp; interests</span><span class="personal-hint">Strength training · Basketball · Swimming</span></summary>
         <p class="personal-note">I hold a national professional fitness coach certification and enjoy staying active outside research.</p>
-        <div class="tags"><span class="tag personal">Certified Fitness Coach</span><span class="tag personal">182 cm · 78 kg</span><span class="tag personal">ENTJ</span></div>
+        <div class="tags"><span class="tag personal">National Professional Fitness Coach</span><span class="tag personal">182 cm · 78 kg</span><span class="tag personal">ENTJ</span></div>
       </details>
     </section>
 
@@ -661,9 +660,12 @@
       const revealAnchor = hash => {
         if (!hash || hash === '#') return false;
         const target = document.getElementById(hash.slice(1));
+        if (!target) return false;
         const index = panels.findIndex(panel => panel === target || panel.contains(target));
-        if (index < 0) return false;
-        selectTab(index);
+        const details = target.closest('details');
+        if (index < 0 && !details) return false;
+        if (index >= 0) selectTab(index);
+        if (details) details.open = true;
         requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
         return true;
       };
