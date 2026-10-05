@@ -80,7 +80,6 @@
     .profile-icon svg { width:27px; height:27px; fill:currentColor; }
     .profile-link.email { --profile-color:#d95d54; }
     .profile-link.scholar { --profile-color:#3477b9; }
-    .profile-link.fitness { --profile-color:#aa4856; }
     .profile-link.papers { --profile-color:#a96b28; }
     .profile-link.projects { --profile-color:#21786d; }
     .profile-link.lab { --profile-color:#247f99; }
@@ -253,7 +252,7 @@
       .hero-inner { grid-template-columns:1fr; text-align:center; padding:40px 24px; gap:24px; }
       .hero-affiliation { margin-left:auto; margin-right:auto; }
       .hero-topics { justify-content:center; }
-      .socials { display:grid; grid-template-columns:repeat(3,66px); justify-content:center; gap:18px 22px; }
+      .socials { display:flex; max-width:242px; margin-left:auto; margin-right:auto; justify-content:center; gap:18px 22px; }
       .avatar { margin:auto; width:150px; height:150px; }
       .actions,.tags,.socials { justify-content:center; }
       h1 { font-size:2.35rem; }
@@ -316,7 +315,6 @@
         <ul class="hero-topics" aria-label="Research interests"><li>Graph Learning</li><li>Probabilistic Modeling</li><li>Neural Operators</li><li>LLM Agents</li></ul>
         <div class="socials" aria-label="Profile links">
           <a class="profile-link scholar" href="https://scholar.google.com/citations?hl=en&amp;user=A74U1lYAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><span class="profile-icon"><svg viewBox="0 0 24 24"><path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2zm0 11.63L4.72 9 12 4.37 19.28 9 12 13.63zM6 14.2V18c2.8 3 9.2 3 12 0v-3.8l-6 3.8-6-3.8z"/></svg></span><span class="profile-label">Scholar</span></a>
-          <a class="profile-link fitness" href="#fitness-credentials" title="National professional fitness coach certification" aria-label="Fitness Coach — national professional certification"><span class="profile-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24"><path d="M8 12h8M3 10v4m18-4v4"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/></svg></span><span class="profile-label">Fitness Coach</span></a>
           <a class="profile-link papers" href="#publications" title="Research publications" aria-label="Research publications"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3V4m9 2v15M6 8h3m6 0h3M6 12h3m6 0h3"/></svg></span><span class="profile-label">Papers</span></a>
           <a class="profile-link projects" href="#about-projects" title="Current research projects" aria-label="Current research projects"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 2-7 11L6 6"/><circle cx="6" cy="6" r="2.5" fill="currentColor"/><circle cx="18" cy="8" r="2.5" fill="currentColor"/><circle cx="11" cy="19" r="2.5" fill="currentColor"/></svg></span><span class="profile-label">Projects</span></a>
           <a class="profile-link lab" href="https://skliotsc.um.edu.mo/" target="_blank" rel="noopener" title="State Key Laboratory of IoT for Smart City" aria-label="State Key Laboratory official website"><span class="profile-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9h14v12M3 9l9-6 9 6M9 21v-5h6v5M8 12h1m6 0h1"/></svg></span><span class="profile-label">Lab</span></a>
