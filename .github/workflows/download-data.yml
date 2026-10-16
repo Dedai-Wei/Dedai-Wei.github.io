@@ -1,0 +1,39 @@
+name: Download Research Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Prepare directories
+        run: |
+          mkdir -p data/raw
+          mkdir -p data/processed
+
+      - name: Show environment
+        run: |
+          echo "GitHub runner is ready"
+          df -h
+          python --version
+
+      - name: Test download
+        run: |
+          echo "Download pipeline is ready."
+          echo "Next step: Taiwan / Japan / Chile / New Zealand"
+
+      - name: Package data
+        run: |
+          tar -czf research-data.tar.gz data/
+
+      - name: Upload research data
+        uses: actions/upload-artifact@v4
+        with:
+          name: four-region-research-data
+          path: research-data.tar.gz
+          retention-days: 90
