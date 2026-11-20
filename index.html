@@ -106,33 +106,6 @@
     .about-heading h2 { margin:0; padding:0; border:0; }
     .about-phd { color:#186c60; background:#def2e9; border-radius:99px; padding:5px 12px; font-size:.8rem; }
     .about-intro { max-width:890px; margin:0 0 22px; color:#42535f; }
-    .research-evolution { margin:0 0 24px; padding:17px 18px 14px; border:1px solid #d7e2e9; border-radius:12px; background:linear-gradient(115deg,#f8f4ff,#f1f8fa 53%,#fff7ee); }
-    .evolution-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:5px 14px; margin-bottom:13px; }
-    .evolution-heading h3 { margin:0; color:#314b69; font-size:1.08rem; }
-    .evolution-heading span { color:#60727d; font-size:.78rem; }
-    .evolution-track { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:11px; }
-    .evolution-card { --evo-color:#7453a6; position:relative; display:block; min-width:0; overflow:visible; padding:10px; border:1px solid #d8ddea; border-radius:9px; background:#fff; color:#253c50; box-shadow:0 3px 11px rgba(29,54,75,.05); transition:transform .2s,border-color .2s,box-shadow .2s; }
-    .evolution-card:nth-child(2) { --evo-color:#286ba0; }
-    .evolution-card:nth-child(3) { --evo-color:#188477; }
-    .evolution-card:nth-child(4) { --evo-color:#b07532; }
-    .evolution-card:nth-child(5) { --evo-color:#a3564c; }
-    .evolution-card:not(:last-child):after { content:"→"; position:absolute; z-index:1; right:-12px; top:52px; color:#8194a5; font-size:18px; line-height:1; }
-    .evolution-card:hover,.evolution-card:focus-within { transform:translateY(-3px); border-color:var(--evo-color); box-shadow:0 8px 17px rgba(29,54,75,.11); }
-    .evolution-card a:focus-visible { outline:2px solid var(--evo-color); outline-offset:3px; }
-    .evolution-art { display:block; overflow:hidden; border-radius:6px; background:#f6f8fc; }
-    .evolution-art img { display:block; width:100%; height:122px; padding:5px; object-fit:contain; background:#fff; }
-    .evolution-stage { display:block; color:inherit; text-decoration:none; }
-    .evolution-stage:hover { color:var(--evo-color); }
-    .evolution-index { display:block; margin-top:9px; color:var(--evo-color); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; }
-    .evolution-name { display:block; margin-top:2px; color:#263b4d; font:400 .91rem/1.3 Georgia,"Times New Roman",serif; }
-    .evolution-caption { margin:10px 0 0; color:#65717d; font-size:.73rem; line-height:1.4; }
-    .evolution-mobile-hint { display:none; }
-    .research-evolution.is-visible .evolution-card { animation:evolution-arrive .58s ease backwards; }
-    .research-evolution.is-visible .evolution-card:nth-child(2) { animation-delay:.16s; }
-    .research-evolution.is-visible .evolution-card:nth-child(3) { animation-delay:.32s; }
-    .research-evolution.is-visible .evolution-card:nth-child(4) { animation-delay:.48s; }
-    .research-evolution.is-visible .evolution-card:nth-child(5) { animation-delay:.64s; }
-    @keyframes evolution-arrive { from { opacity:.45; transform:translateY(11px); } to { opacity:1; transform:translateY(0); } }
     .about-explorer { --about-violet:var(--violet); --about-teal:var(--teal); --about-copper:var(--amber); }
     .about-explorer [hidden] { display:none !important; }
     .about-tabs { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; padding:5px; margin-bottom:19px; background:linear-gradient(100deg,#f2eef9,#edf5f5 55%,#fbf2e9); border:1px solid #e3e2eb; border-radius:10px; }
@@ -306,10 +279,6 @@
       .trajectory-mobile { display:block; }
       .about-grid { grid-template-columns:1fr; gap:10px; }
       .about-tabs { grid-template-columns:repeat(6,minmax(0,1fr)); }
-      .evolution-track { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:minmax(205px,72%); overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; padding:2px 2px 10px; }
-      .evolution-card { scroll-snap-align:start; }
-      .evolution-card:after { display:none; }
-      .evolution-mobile-hint { display:inline; }
       .about-tab { grid-column:span 2; min-width:0; }
       .about-tab:nth-last-child(-n+2) { grid-column:span 3; }
       .about-card:not(.about-project) { display:grid; grid-template-columns:65px minmax(0,1fr); column-gap:12px; padding:15px; }
@@ -340,7 +309,6 @@
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
       .about-explorer *, .about-explorer *:before, .about-explorer *:after { animation:none !important; transition:none !important; }
-      .research-evolution *, .research-evolution *:before, .research-evolution *:after { animation:none !important; transition:none !important; }
     }
   </style>
 </head>
@@ -380,32 +348,6 @@
         <span class="about-phd">PhD applications · Fall 2027</span>
       </div>
       <p class="about-intro">My research focuses on AI for Science, combining stochastic processes, statistical inference, and mathematical optimization with graph learning, probabilistic diffusion models, and physics-informed neural operators. I focus on generalization across physical regimes and uncertainty quantification, while exploring large language models (LLMs) and agent systems for scientific analysis and discovery.</p>
-      <figure class="research-evolution" id="research-evolution" aria-labelledby="evolution-title">
-        <div class="evolution-heading"><h3 id="evolution-title">From foundations to discovery</h3><span>Follow the ideas through my research <span class="evolution-mobile-hint">· swipe to explore →</span></span></div>
-        <div class="evolution-track">
-          <article class="evolution-card">
-            <a class="evolution-art" href="paper-images/dung-beetle-framework.jpg" target="_blank" rel="noopener" aria-label="Open optimization figure at full size"><img src="paper-images/dung-beetle-framework.jpg" alt="Population-reduction illustration from my Neural Networks optimization paper" width="1290" height="1000" loading="lazy" decoding="async"></a>
-            <a class="evolution-stage" href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener"><span class="evolution-index">01 · Optimization</span><span class="evolution-name">Build quantitative models</span></a>
-          </article>
-          <article class="evolution-card">
-            <a class="evolution-art" href="paper-images/dmgdn-workflow-20261023.webp" target="_blank" rel="noopener" aria-label="Open dynamic graph figure at full size"><img src="paper-images/dmgdn-workflow-20261023.webp" alt="Dynamic multi-view graph diffusion workflow from my DMGDN manuscript" width="2000" height="1125" loading="lazy" decoding="async"></a>
-            <a class="evolution-stage" href="#research-dmgdn"><span class="evolution-index">02 · Graph learning</span><span class="evolution-name">Track changing structure</span></a>
-          </article>
-          <article class="evolution-card">
-            <a class="evolution-art" href="paper-images/pic-go-overview-20261023.webp" target="_blank" rel="noopener" aria-label="Open physics-informed neural operator figure at full size"><img src="paper-images/pic-go-overview-20261023.webp" alt="PIC-GO physics-informed neural operator framework from my manuscript" width="1535" height="1024" loading="lazy" decoding="async"></a>
-            <a class="evolution-stage" href="#research-pic-go"><span class="evolution-index">03 · Neural operators</span><span class="evolution-name">Adapt to physical regimes</span></a>
-          </article>
-          <article class="evolution-card">
-            <a class="evolution-art" href="paper-images/hfda-pc-hrd-framework-20261121.webp" target="_blank" rel="noopener" aria-label="Open seismic modeling figure at full size"><img src="paper-images/hfda-pc-hrd-framework-20261121.webp" alt="HFDA–PC-HRD modeling and engineering evaluation overview from my seismic manuscript" width="1600" height="741" loading="lazy" decoding="async"></a>
-            <a class="evolution-stage" href="#research-ei-hlrd"><span class="evolution-index">04 · Probabilistic diffusion</span><span class="evolution-name">Model seismic uncertainty</span></a>
-          </article>
-          <article class="evolution-card">
-            <a class="evolution-art" href="paper-images/fadc-overview-20261023.webp" target="_blank" rel="noopener" aria-label="Open LLM-guided discovery figure at full size"><img src="paper-images/fadc-overview-20261023.webp" alt="FADC overview of LLM-compiled controls and subgroup discovery from my manuscript" width="2000" height="1334" loading="lazy" decoding="async"></a>
-            <a class="evolution-stage" href="#research-fadc"><span class="evolution-index">05 · LLM-guided discovery</span><span class="evolution-name">Turn intent into analysis</span></a>
-          </article>
-        </div>
-        <figcaption class="evolution-caption">Figures from my papers and manuscripts; open an image at full size or select a title for related work.</figcaption>
-      </figure>
       <div class="about-explorer" id="about-explorer">
         <div class="about-tabs" aria-label="Explore my research" hidden>
           <button class="about-tab" type="button" id="about-tab-foundations" aria-controls="about-foundations">
@@ -761,18 +703,6 @@
       });
       window.addEventListener('hashchange', () => revealAnchor(location.hash));
       revealAnchor(location.hash);
-      const evolution = document.getElementById('research-evolution');
-      if (evolution && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-            evolution.classList.add('is-visible');
-            observer.disconnect();
-          }
-        }, { threshold: .18 });
-        observer.observe(evolution);
-      } else if (evolution) {
-        evolution.classList.add('is-visible');
-      }
     })();
   </script>
 </body>
