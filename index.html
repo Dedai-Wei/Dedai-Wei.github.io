@@ -106,6 +106,28 @@
     .about-heading h2 { margin:0; padding:0; border:0; }
     .about-phd { color:#186c60; background:#def2e9; border-radius:99px; padding:5px 12px; font-size:.8rem; }
     .about-intro { max-width:890px; margin:0 0 22px; color:#42535f; }
+    .research-evolution { margin:0 0 24px; padding:17px 18px 14px; border:1px solid #d7e2e9; border-radius:12px; background:linear-gradient(115deg,#f8f4ff,#f1f8fa 53%,#fff7ee); }
+    .evolution-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:5px 14px; margin-bottom:13px; }
+    .evolution-heading h3 { margin:0; color:#314b69; font-size:1.08rem; }
+    .evolution-heading span { color:#60727d; font-size:.78rem; }
+    .evolution-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+    .evolution-card { --evo-color:#7453a6; position:relative; display:block; min-width:0; overflow:visible; padding:10px; border:1px solid #d8ddea; border-radius:9px; background:#fff; color:#253c50; text-decoration:none; box-shadow:0 3px 11px rgba(29,54,75,.05); transition:transform .2s,border-color .2s,box-shadow .2s; }
+    .evolution-card:nth-child(2) { --evo-color:#286ba0; }
+    .evolution-card:nth-child(3) { --evo-color:#188477; }
+    .evolution-card:nth-child(4) { --evo-color:#a3564c; }
+    .evolution-card:not(:last-child):after { content:"→"; position:absolute; z-index:1; right:-12px; top:52px; color:#8194a5; font-size:18px; line-height:1; }
+    .evolution-card:hover,.evolution-card:focus-visible { transform:translateY(-3px); border-color:var(--evo-color); box-shadow:0 8px 17px rgba(29,54,75,.11); color:#253c50; }
+    .evolution-card:focus-visible { outline:2px solid var(--evo-color); outline-offset:3px; }
+    .evolution-scene { display:block; width:100%; height:100px; border-radius:6px; background:#f6f8fc; }
+    .evolution-index { display:block; margin-top:9px; color:var(--evo-color); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; }
+    .evolution-name { display:block; margin-top:2px; color:#263b4d; font:400 .91rem/1.3 Georgia,"Times New Roman",serif; }
+    .evolution-caption { margin:10px 0 0; color:#65717d; font-size:.73rem; line-height:1.4; }
+    .evolution-mobile-hint { display:none; }
+    .research-evolution.is-visible .evolution-card { animation:evolution-arrive .58s ease backwards; }
+    .research-evolution.is-visible .evolution-card:nth-child(2) { animation-delay:.16s; }
+    .research-evolution.is-visible .evolution-card:nth-child(3) { animation-delay:.32s; }
+    .research-evolution.is-visible .evolution-card:nth-child(4) { animation-delay:.48s; }
+    @keyframes evolution-arrive { from { opacity:.45; transform:translateY(11px); } to { opacity:1; transform:translateY(0); } }
     .about-explorer { --about-violet:var(--violet); --about-teal:var(--teal); --about-copper:var(--amber); }
     .about-explorer [hidden] { display:none !important; }
     .about-tabs { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; padding:5px; margin-bottom:19px; background:linear-gradient(100deg,#f2eef9,#edf5f5 55%,#fbf2e9); border:1px solid #e3e2eb; border-radius:10px; }
@@ -279,6 +301,10 @@
       .trajectory-mobile { display:block; }
       .about-grid { grid-template-columns:1fr; gap:10px; }
       .about-tabs { grid-template-columns:repeat(6,minmax(0,1fr)); }
+      .evolution-track { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:minmax(205px,72%); overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; padding:2px 2px 10px; }
+      .evolution-card { scroll-snap-align:start; }
+      .evolution-card:after { display:none; }
+      .evolution-mobile-hint { display:inline; }
       .about-tab { grid-column:span 2; min-width:0; }
       .about-tab:nth-last-child(-n+2) { grid-column:span 3; }
       .about-card:not(.about-project) { display:grid; grid-template-columns:65px minmax(0,1fr); column-gap:12px; padding:15px; }
@@ -309,6 +335,7 @@
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
       .about-explorer *, .about-explorer *:before, .about-explorer *:after { animation:none !important; transition:none !important; }
+      .research-evolution *, .research-evolution *:before, .research-evolution *:after { animation:none !important; transition:none !important; }
     }
   </style>
 </head>
@@ -348,6 +375,61 @@
         <span class="about-phd">PhD applications · Fall 2027</span>
       </div>
       <p class="about-intro">My research focuses on AI for Science, combining stochastic processes, statistical inference, and mathematical optimization with graph learning, probabilistic diffusion models, and physics-informed neural operators. I focus on generalization across physical regimes and uncertainty quantification, while exploring large language models (LLMs) and agent systems for scientific analysis and discovery.</p>
+      <figure class="research-evolution" id="research-evolution" aria-labelledby="evolution-title">
+        <div class="evolution-heading"><h3 id="evolution-title">From foundations to discovery</h3><span>Follow the ideas through my research <span class="evolution-mobile-hint">· swipe to explore →</span></span></div>
+        <div class="evolution-track">
+          <a class="evolution-card" href="#about-foundations" aria-label="Explore mathematical and statistical foundations">
+            <svg class="evolution-scene" viewBox="0 0 230 100" role="img" aria-label="Probability distribution and stochastic sample paths">
+              <rect width="230" height="100" rx="6" fill="#f4effb"/>
+              <path d="M20 80H214M25 17V80M25 58H214M25 36H214" fill="none" stroke="#dfd4ed" stroke-width="1"/>
+              <path d="M34 79C55 78 62 25 94 23c32-2 37 54 87 56Z" fill="#d9c8ec" opacity=".58"/>
+              <path d="M34 79C55 78 62 25 94 23c32-2 37 54 87 56" fill="none" stroke="#7453a6" stroke-width="2.5"/>
+              <path d="M29 61c17-10 24 11 41-2s22 8 37-1 24 11 41-3 25 9 50-4M29 72c14-9 22 6 37-1s24 7 38-5 29 8 44-2 27 3 50-9" fill="none" stroke="#a78bc8" stroke-width="1.4" opacity=".82"/>
+              <circle cx="94" cy="23" r="4" fill="#e0a45b"/><circle cx="157" cy="58" r="3" fill="#7453a6"/>
+            </svg>
+            <span class="evolution-index">01 · Mathematics &amp; statistics</span><span class="evolution-name">Model uncertainty</span>
+          </a>
+          <a class="evolution-card" href="#research-dmgdn" aria-label="Explore dynamic graph learning research">
+            <svg class="evolution-scene" viewBox="0 0 230 100" role="img" aria-label="A changing network and diffusion paths">
+              <rect width="230" height="100" rx="6" fill="#edf5fb"/>
+              <circle cx="119" cy="50" r="38" fill="none" stroke="#b7d8e8" stroke-width="1.2" stroke-dasharray="3 4"/>
+              <circle cx="119" cy="50" r="26" fill="none" stroke="#d1e5ec" stroke-width="1.2"/>
+              <path d="M35 63 74 28 119 50 167 25 198 64M35 63l48 17 36-30 42 27 37-13M74 28l9 52m84-55-6 52M74 28l93-3" fill="none" stroke="#84afc8" stroke-width="2"/>
+              <path d="m84 79 34-29 49-25" fill="none" stroke="#286ba0" stroke-width="3" stroke-dasharray="5 4"/>
+              <g fill="#fff" stroke="#286ba0" stroke-width="2"><circle cx="35" cy="63" r="6"/><circle cx="74" cy="28" r="6"/><circle cx="83" cy="80" r="6"/><circle cx="119" cy="50" r="8"/><circle cx="167" cy="25" r="6"/><circle cx="161" cy="77" r="6"/><circle cx="198" cy="64" r="6"/></g>
+              <circle cx="119" cy="50" r="3" fill="#e9a750"/>
+            </svg>
+            <span class="evolution-index">02 · Graph learning</span><span class="evolution-name">Learn evolving structure</span>
+          </a>
+          <a class="evolution-card" href="#research-ei-hlrd" aria-label="Explore physics-guided probabilistic modeling research">
+            <svg class="evolution-scene" viewBox="0 0 230 100" role="img" aria-label="Earth layers, a sensor, and generated seismic waveforms">
+              <rect width="230" height="100" rx="6" fill="#edf8f5"/>
+              <path d="M0 65c42-12 75 4 115-8s71-5 115-19v62H0Z" fill="#dcefe7"/>
+              <path d="M0 76c45-9 75 7 114-4s72-6 116-19M0 87c46-5 74 8 116-1s73-6 114-18" fill="none" stroke="#8ec8ba" stroke-width="2"/>
+              <path d="M38 62v-16h26v16m-18-16V34h10v12M51 34V23m-13 29h26" fill="none" stroke="#386e72" stroke-width="2"/>
+              <circle cx="51" cy="22" r="3" fill="#e5a35c"/>
+              <path d="M80 47c13-7 22 7 34-2s21 6 30-2 18 8 26 0 17 7 29-4" fill="none" stroke="#188477" stroke-width="2.5"/>
+              <path d="M81 53c13-6 21 7 34-1s20 7 30-1 18 7 26 1 17 6 28-2" fill="none" stroke="#58a99c" stroke-width="1.4" opacity=".85"/>
+              <circle cx="116" cy="72" r="4" fill="#df9860"/><path d="M116 72c8-10 15-10 24 0M116 72c11-15 24-16 36-2" fill="none" stroke="#df9860" stroke-width="1.2" opacity=".8"/>
+            </svg>
+            <span class="evolution-index">03 · Physical systems</span><span class="evolution-name">Generate plausible futures</span>
+          </a>
+          <a class="evolution-card" href="#current-agent-study" aria-label="Explore LLM and agent systems research">
+            <svg class="evolution-scene" viewBox="0 0 230 100" role="img" aria-label="Scientific documents connected to agent decisions and discoveries">
+              <rect width="230" height="100" rx="6" fill="#fff4ee"/>
+              <path d="M30 27h50v50H30zM38 37h27m-27 8h32m-32 8h20" fill="#fff" stroke="#cda390" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M80 52h30m42 0h29M110 52l-7-5m7 5-7 5m78-5-7-5m7 5-7 5" fill="none" stroke="#ad756a" stroke-width="2" stroke-linecap="round"/>
+              <rect x="112" y="31" width="42" height="42" rx="10" fill="#f6d9ce" stroke="#a3564c" stroke-width="2"/>
+              <path d="M122 44h22m-22 7h17m-17 7h11" stroke="#a3564c" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="193" cy="52" r="18" fill="#fff" stroke="#a3564c" stroke-width="2"/>
+              <path d="m193 40 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#e2ad69"/>
+              <circle cx="139" cy="17" r="3" fill="#e2ad69"/><circle cx="166" cy="79" r="3" fill="#e2ad69"/>
+            </svg>
+            <span class="evolution-index">04 · LLMs &amp; agents</span><span class="evolution-name">Support scientific discovery</span>
+          </a>
+        </div>
+        <figcaption class="evolution-caption">Illustrative research themes; select a stage to view related work.</figcaption>
+      </figure>
       <div class="about-explorer" id="about-explorer">
         <div class="about-tabs" aria-label="Explore my research" hidden>
           <button class="about-tab" type="button" id="about-tab-foundations" aria-controls="about-foundations">
@@ -703,6 +785,18 @@
       });
       window.addEventListener('hashchange', () => revealAnchor(location.hash));
       revealAnchor(location.hash);
+      const evolution = document.getElementById('research-evolution');
+      if (evolution && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            evolution.classList.add('is-visible');
+            observer.disconnect();
+          }
+        }, { threshold: .18 });
+        observer.observe(evolution);
+      } else if (evolution) {
+        evolution.classList.add('is-visible');
+      }
     })();
   </script>
 </body>
