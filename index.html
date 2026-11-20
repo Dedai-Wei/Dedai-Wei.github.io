@@ -220,11 +220,6 @@
     .current-figure img { display:block; width:100%; height:auto; object-fit:contain; }
     .current-figure figcaption { margin-top:7px; font-size:.74rem; text-align:center; color:#607487; }
     .current-figure figcaption a { color:inherit; }
-    .pc-hrd-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:17px; }
-    .pc-hrd-gallery .current-figure { padding:9px; border:1px solid #d8e3ed; border-radius:8px; background:#fff; }
-    .pc-hrd-gallery .current-figure > a { padding:0; border:0; border-radius:4px; overflow:hidden; }
-    .pc-hrd-gallery .current-figure img { width:100%; height:auto; }
-    .pc-hrd-gallery .current-figure figcaption { margin:8px 2px 2px; line-height:1.4; }
     .current-summary { min-width:0; }
     .paper-version { margin:10px 0 0; color:#667787; font-size:.76rem; line-height:1.6; }
     .paper-abstract { margin-top:13px; border-top:1px solid #dce3ed; padding-top:9px; }
@@ -300,7 +295,6 @@
       .current-item { padding:14px 14px 14px 48px; }
       .current-item:before { left:13px; top:15px; }
       .current-overview { grid-template-columns:1fr; gap:14px; }
-      .pc-hrd-gallery { grid-template-columns:1fr; gap:13px; }
       .service-cover { height:230px; min-height:0; }
       .about-tabs { gap:3px; padding:4px; }
       .about-tab { flex-direction:column; gap:6px; padding:9px 3px; font-size:.78rem; }
@@ -583,14 +577,13 @@
         <li class="current-item" id="research-ei-hlrd">
           <h3 class="paper-title">Center-Anchored Joint Uncertainty Modeling of Seismic Response Spectra for Engineering Demand Assessment</h3>
           <p class="paper-meta"><strong>Dedai Wei</strong> · 2026 <span class="status">In preparation</span></p>
-          <p class="paper-desc">HFDA–PC-HRD combines a high-fidelity central response spectrum with conditional hierarchical residual diffusion to model uncertainty across vibration periods. Evaluated on 45,460 NGA-Sub records from seven subduction regions, the framework connects generated spectra to engineering demand and real-record ground-motion selection.</p>
-          <div class="pc-hrd-gallery" aria-label="Selected figures from the HFDA–PC-HRD manuscript">
-            <figure class="current-figure"><a href="paper-images/hfda-pc-hrd-framework-20261121.webp" target="_blank" rel="noopener" aria-label="Open HFDA–PC-HRD framework figure at full size"><img src="paper-images/hfda-pc-hrd-framework-20261121.webp" alt="HFDA–PC-HRD framework showing central-spectrum prediction, residual diffusion and engineering evaluation" width="1600" height="741" loading="lazy" decoding="async"></a><figcaption>Model framework · <a href="paper-images/hfda-pc-hrd-framework-20261121.webp" target="_blank" rel="noopener">open full size ↗</a></figcaption></figure>
-            <figure class="current-figure"><a href="paper-images/hfda-pc-hrd-joint-spectra-20261121.webp" target="_blank" rel="noopener" aria-label="Open generated response spectra figure at full size"><img src="paper-images/hfda-pc-hrd-joint-spectra-20261121.webp" alt="One hundred generated response spectra and their short-, medium- and long-period bands" width="1600" height="1093" loading="lazy" decoding="async"></a><figcaption>Joint probabilistic spectra · <a href="paper-images/hfda-pc-hrd-joint-spectra-20261121.webp" target="_blank" rel="noopener">open full size ↗</a></figcaption></figure>
-            <figure class="current-figure"><a href="paper-images/hfda-pc-hrd-basin-demand-20261121.webp" target="_blank" rel="noopener" aria-label="Open basin demand spectra figure at full size"><img src="paper-images/hfda-pc-hrd-basin-demand-20261121.webp" alt="Generated and observed response spectra under deep and shallow basin conditions" width="1600" height="662" loading="lazy" decoding="async"></a><figcaption>Basin-conditioned demand · <a href="paper-images/hfda-pc-hrd-basin-demand-20261121.webp" target="_blank" rel="noopener">open full size ↗</a></figcaption></figure>
-            <figure class="current-figure"><a href="paper-images/hfda-pc-hrd-record-selection-20261121.webp" target="_blank" rel="noopener" aria-label="Open ground-motion record selection figure at full size"><img src="paper-images/hfda-pc-hrd-record-selection-20261121.webp" alt="Probabilistic and central spectral targets matched to real acceleration records" width="1600" height="1311" loading="lazy" decoding="async"></a><figcaption>Real-record ground-motion selection · <a href="paper-images/hfda-pc-hrd-record-selection-20261121.webp" target="_blank" rel="noopener">open full size ↗</a></figcaption></figure>
+          <div class="current-overview">
+            <figure class="current-figure"><a href="paper-images/hfda-pc-hrd-framework-20261121.webp" target="_blank" rel="noopener" aria-label="Open HFDA–PC-HRD overview at full size"><img src="paper-images/hfda-pc-hrd-framework-20261121.webp" alt="HFDA–PC-HRD overview showing central-spectrum prediction, residual diffusion and engineering evaluation" width="1600" height="741" loading="lazy" decoding="async"></a><figcaption><a href="paper-images/hfda-pc-hrd-framework-20261121.webp" target="_blank" rel="noopener">Overview · open full size ↗</a></figcaption></figure>
+            <div class="current-summary">
+              <p class="paper-desc">HFDA–PC-HRD combines a high-fidelity central response spectrum with conditional hierarchical residual diffusion to model uncertainty across vibration periods. Evaluated on 45,460 NGA-Sub records from seven subduction regions, the framework connects generated spectra to engineering demand and real-record ground-motion selection.</p>
+              <details class="paper-abstract"><summary>Read research summary</summary><p>Large earthquakes, soft soils and sedimentary basins can change spectral peaks, long-period demand and uncertainty across vibration periods. This work uses HFDA to estimate the central response spectrum, then conditions hierarchical residual diffusion on earthquake, path and site information to generate complete probabilistic spectra. It evaluates 45,460 NGA-Sub records from seven subduction regions and uses independent New Zealand GeoNet accelerograms to study how joint probabilistic targets inform real-record ground-motion selection.</p></details>
+            </div>
           </div>
-          <details class="paper-abstract"><summary>Read research summary</summary><p>Large earthquakes, soft soils and sedimentary basins can change spectral peaks, long-period demand and uncertainty across vibration periods. This work uses HFDA to estimate the central response spectrum, then conditions hierarchical residual diffusion on earthquake, path and site information to generate complete probabilistic spectra. It evaluates 45,460 NGA-Sub records from seven subduction regions and uses independent New Zealand GeoNet accelerograms to study how joint probabilistic targets inform real-record ground-motion selection.</p></details>
         </li>
         <li class="current-item"><h3 class="paper-title">Rank-Gated Neural Estimation of Latent Equilibrium Spaces in Nonstationary Multivariate Time Series</h3><p class="paper-meta"><strong>Dedai Wei</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Rank-aware neural error correction for nonlinear long-run equilibria in nonstationary multivariate systems.</p></li>
         <li class="current-item"><h3 class="paper-title">CausalMB-LLM: LLM-Guided Causal Relation and Markov Boundary Discovery for Tabular Prediction</h3><p class="paper-meta"><strong>Dedai Wei</strong> · 2026 <span class="status">In progress</span></p><p class="paper-desc">Combining LLM-generated structural hypotheses with Markov-boundary search and conditional-independence validation.</p></li>
