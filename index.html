@@ -106,6 +106,9 @@
     .about-heading h2 { margin:0; padding:0; border:0; }
     .about-phd { color:#186c60; background:#def2e9; border-radius:99px; padding:5px 12px; font-size:.8rem; }
     .about-intro { max-width:890px; margin:0 0 22px; color:#42535f; }
+    .about-publication-summary { margin:-9px 0 22px; padding:12px 16px; border-left:3px solid #9a79bb; border-radius:0 7px 7px 0; background:#f8f6fc; color:#465562; font-size:.84rem; line-height:1.65; }
+    .about-publication-summary p { margin:3px 0; }
+    .about-summary-label { display:inline-block; margin-right:8px; color:var(--violet); font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; }
     .about-explorer { --about-violet:var(--violet); --about-teal:var(--teal); --about-copper:var(--amber); }
     .about-explorer [hidden] { display:none !important; }
     .about-tabs { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; padding:5px; margin-bottom:19px; background:linear-gradient(100deg,#f2eef9,#edf5f5 55%,#fbf2e9); border:1px solid #e3e2eb; border-radius:10px; }
@@ -347,7 +350,11 @@
         <h2>About</h2>
         <span class="about-phd">PhD applications · Fall 2027</span>
       </div>
-      <p class="about-intro">My research focuses on AI for Science, combining stochastic processes, statistical inference, and mathematical optimization with graph learning, probabilistic diffusion models, and physics-informed neural operators. I focus on generalization across physical regimes and uncertainty quantification, while exploring large language models (LLMs) and agent systems for scientific analysis and discovery. My work has appeared in JCR Q1 journals including <a href="https://doi.org/10.1016/j.jare.2025.09.001" target="_blank" rel="noopener"><i>Journal of Advanced Research</i></a>, <a href="https://doi.org/10.1016/j.patcog.2026.113418" target="_blank" rel="noopener"><i>Pattern Recognition</i></a>, <a href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener"><i>Neural Networks</i></a>, and <a href="https://doi.org/10.1016/j.rineng.2025.106785" target="_blank" rel="noopener"><i>Results in Engineering</i></a>.</p>
+      <p class="about-intro">My research focuses on AI for Science, combining stochastic processes, statistical inference, and mathematical optimization with graph learning, probabilistic diffusion models, and physics-informed neural operators. I focus on generalization across physical regimes and uncertainty quantification, while exploring large language models (LLMs) and agent systems for scientific analysis and discovery.</p>
+      <div class="about-publication-summary" aria-label="Selected publications and current submissions">
+        <p><span class="about-summary-label">Published · JCR Q1</span><a href="https://doi.org/10.1016/j.jare.2025.09.001" target="_blank" rel="noopener"><i>Journal of Advanced Research</i></a> (IF 13.0) · <a href="https://doi.org/10.1016/j.patcog.2026.113418" target="_blank" rel="noopener"><i>Pattern Recognition</i></a> (IF 7.5) · <a href="https://doi.org/10.1016/j.neunet.2026.109274" target="_blank" rel="noopener"><i>Neural Networks</i></a> (IF 6.3)</p>
+        <p><span class="about-summary-label">Under review</span><a href="#research-stressgdiff">StressGDiff</a> at <i>Reliability Engineering &amp; System Safety</i> (IF 13.7) · <a href="#research-dmgdn">DMGDN</a> at <i>Information Sciences</i> (IF 6.8) · <a href="#research-pic-go">PIC-GO</a> at AAAI 2027 (CCF A) · <a href="#research-fadc">FADC</a> at COLING 2027 (CCF B) · <a href="#current-agent-study">Insurance as AI Risk Infrastructure</a> extended version at <i>IEEE Transactions on Artificial Intelligence</i> (CiteScore 6.4)</p>
+      </div>
       <div class="about-explorer" id="about-explorer">
         <div class="about-tabs" aria-label="Explore my research" hidden>
           <button class="about-tab" type="button" id="about-tab-foundations" aria-controls="about-foundations">
